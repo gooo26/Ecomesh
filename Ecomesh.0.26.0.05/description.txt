@@ -1,0 +1,16 @@
+NXT E-Commerce Landing Page Template
+
+A reusable e-commerce landing page template designed for showcasing and selling thoughtfully designed everyday essentials with modern UI and seamless cart interactions.
+
+Tags:
+
+Landing Page
+E-Commerce
+Products
+Shopping Cart
+Featured Products
+Categories
+Promo Banner
+Parallax
+Animations
+Responsive
