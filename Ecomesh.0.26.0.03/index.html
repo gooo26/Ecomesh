@@ -1,0 +1,770 @@
+<html lang="en" class="scroll-smooth"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SafeSense™ | Military-Grade Privacy Protection</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body {
+font-family: 'Inter', sans-serif;
+background-color: #050505; /* Deep dark base */
+color: #f0f0f0;
+overflow-x: hidden;
+}
+/* Custom Gradients & Animations */
+.brand-accent { color: #FF7085; }
+.bg-brand-accent { background-color: #FF7085; }
+.glass-panel {
+background: rgba(255, 255, 255, 0.03);
+backdrop-filter: blur(12px);
+border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.radar-grid {
+background-size: 40px 40px;
+background-image:
+linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
+}
+@keyframes scan-sweep {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+@keyframes pulse-ring {
+0% { transform: scale(0.8); opacity: 0.5; }
+100% { transform: scale(1.5); opacity: 0; }
+}
+@keyframes reveal {
+from { opacity: 0; transform: translateY(20px); }
+to { opacity: 1; transform: translateY(0); }
+}
+@keyframes float {
+0%, 100% { transform: translateY(0px); }
+50% { transform: translateY(-10px); }
+}
+.animate-reveal {
+animation: reveal 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+opacity: 0; /* Start hidden */
+}
+.animate-float {
+animation: float 5s ease-in-out infinite;
+}
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.radar-sweep {
+background: conic-gradient(from 0deg, transparent 0deg, rgba(255, 112, 133, 0.2) 60deg, transparent 100deg);
+animation: scan-sweep 3s linear infinite;
+}
+/* Text selection color */
+::selection {
+background: #FF7085;
+color: white;
+}
+</style>
+<link id="all-fonts-link-font-geist" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist">.font-geist { font-family: 'Geist', sans-serif !important; }</style><link id="all-fonts-link-font-roboto" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-roboto">.font-roboto { font-family: 'Roboto', sans-serif !important; }</style><link id="all-fonts-link-font-montserrat" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-montserrat">.font-montserrat { font-family: 'Montserrat', sans-serif !important; }</style><link id="all-fonts-link-font-poppins" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-poppins">.font-poppins { font-family: 'Poppins', sans-serif !important; }</style><link id="all-fonts-link-font-playfair" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&amp;display=swap"><style id="all-fonts-style-font-playfair">.font-playfair { font-family: 'Playfair Display', serif !important; }</style><link id="all-fonts-link-font-instrument-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-instrument-serif">.font-instrument-serif { font-family: 'Instrument Serif', serif !important; }</style><link id="all-fonts-link-font-merriweather" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&amp;display=swap"><style id="all-fonts-style-font-merriweather">.font-merriweather { font-family: 'Merriweather', serif !important; }</style><link id="all-fonts-link-font-bricolage" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-bricolage">.font-bricolage { font-family: 'Bricolage Grotesque', sans-serif !important; }</style><link id="all-fonts-link-font-jakarta" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-jakarta">.font-jakarta { font-family: 'Plus Jakarta Sans', sans-serif !important; }</style><link id="all-fonts-link-font-manrope" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-manrope">.font-manrope { font-family: 'Manrope', sans-serif !important; }</style><link id="all-fonts-link-font-space-grotesk" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-space-grotesk">.font-space-grotesk { font-family: 'Space Grotesk', sans-serif !important; }</style><link id="all-fonts-link-font-work-sans" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-work-sans">.font-work-sans { font-family: 'Work Sans', sans-serif !important; }</style><link id="all-fonts-link-font-pt-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&amp;display=swap"><style id="all-fonts-style-font-pt-serif">.font-pt-serif { font-family: 'PT Serif', serif !important; }</style><link id="all-fonts-link-font-geist-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist-mono">.font-geist-mono { font-family: 'Geist Mono', monospace !important; }</style><link id="all-fonts-link-font-space-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;display=swap"><style id="all-fonts-style-font-space-mono">.font-space-mono { font-family: 'Space Mono', monospace !important; }</style><link id="all-fonts-link-font-quicksand" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-quicksand">.font-quicksand { font-family: 'Quicksand', sans-serif !important; }</style><link id="all-fonts-link-font-nunito" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-nunito">.font-nunito { font-family: 'Nunito', sans-serif !important; }</style><link id="all-fonts-link-font-newsreader" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..800&amp;display=swap"><style id="all-fonts-style-font-newsreader">.font-newsreader { font-family: 'Newsreader', serif !important; }</style><link id="all-fonts-link-font-google-sans-flex" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-google-sans-flex">.font-google-sans-flex { font-family: 'Google Sans Flex', sans-serif !important; }</style><link id="all-fonts-link-font-oswald" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-oswald">.font-oswald { font-family: 'Oswald', sans-serif !important; }</style><link id="all-fonts-link-font-dm-sans" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-dm-sans">.font-dm-sans { font-family: 'DM Sans', sans-serif !important; }</style></head>
+<body class="antialiased selection:bg-[#FF7085] selection:text-white">
+
+    <!-- Ambient Background Glow -->
+    <div class="fixed inset-0 z-0 pointer-events-none">
+        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full blur-[180px] opacity-10 bg-[#E42910]" style="transition: outline 0.1s ease-in-out;"></div>
+        <div class="absolute bottom-[10%] right-[-5%] w-[30%] h-[30%] bg-blue-900 rounded-full blur-[150px] opacity-10" style="transition: outline 0.1s ease-in-out;"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-[#050505]/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-1 group">
+                <div class="relative w-6 h-6 border border-white/80 rounded flex items-center justify-center group-hover:border-[#FF7085] transition-colors duration-300">
+                    <div class="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-[#E42910]" style="transition: outline 0.1s ease-in-out;"></div>
+                </div>
+                <div class="ml-2 text-xl tracking-tight">
+                    <span class="font-medium text-white" style="transition: outline 0.1s ease-in-out;">SAFE</span><span class="font-light text-white/70">SENSE</span>
+                </div>
+            </a>
+
+            <!-- Desktop Links -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-white/60">
+                <a href="#features" class="hover:text-white transition-colors" style="transition: outline 0.1s ease-in-out;">Features</a>
+                <a href="#how-it-works" class="hover:text-white transition-colors" style="transition: outline 0.1s ease-in-out;">How it Works</a>
+                <a href="#reviews" class="hover:text-white transition-colors" style="transition: outline 0.1s ease-in-out;">Reviews</a>
+            </div>
+
+            <!-- CTA -->
+            <a href="#pricing" class="hidden md:flex items-center gap-2 bg-white text-black px-5 py-2.5 rounded-full text-sm font-medium hover:bg-[#FF7085] hover:text-white transition-all duration-300" style="transition: outline 0.1s ease-in-out;">
+                Secure Your Space
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="shield-check" class="lucide lucide-shield-check w-4 h-4"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
+            </a>
+            
+            <!-- Mobile Menu Icon -->
+            <button class="md:hidden text-white/80">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="menu" class="lucide lucide-menu w-6 h-6"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="md:pt-48 md:pb-32 overflow-hidden z-10 max-w-7xl mr-auto ml-auto pt-32 pr-6 pb-20 pl-6 relative">
+        <div class="grid lg:grid-cols-2 gap-16 gap-x-16 gap-y-16 items-center">
+            
+            <!-- Text Content -->
+            <div class="max-w-2xl">
+                <div class="inline-flex animate-reveal text-xs font-medium text-red-600 tracking-wide bg-[#FF7085]/5 opacity-100 border-[#FF7085]/30 border rounded-full mb-8 pt-1 pr-3 pb-1 pl-3 translate-y-0 gap-x-2 gap-y-2 items-center" style="transition: outline 0.1s ease-in-out">
+                    <span class="relative flex h-2 w-2">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 bg-[#E42910]" style="transition: outline 0.1s ease-in-out;"></span>
+                      <span class="relative inline-flex rounded-full h-2 w-2 bg-[#E42910]" style="transition: outline 0.1s ease-in-out;"></span>
+                    </span>
+                    MILITARY-GRADE PRIVACY SHIELD
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl font-medium tracking-tight text-white mb-6 leading-[1.1] animate-reveal delay-100 opacity-100 translate-y-0" style="transition: outline 0.1s ease-in-out;">
+                    Scan. Detect. <br>
+                    <span class="bg-clip-text text-transparent bg-gradient-to-br from-[#E42910] to-[#000000]/5">Neutralize.</span>
+                </h1>
+                
+                <p class="text-lg md:text-xl text-white/60 font-light mb-10 max-w-lg leading-relaxed animate-reveal delay-200 opacity-100 translate-y-0">
+                    The SafeSense™ T66 empowers travelers to instantly detect hidden cameras, GPS trackers, and bugs. Elite tactical protection in a pocket-sized design.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 animate-reveal delay-300 opacity-100 translate-y-0">
+                    <a href="#pricing" class="flex items-center justify-center gap-2 text-white px-8 py-4 rounded-full text-base font-medium hover:bg-[#ff5670] transition-colors shadow-[0_0_20px_rgba(255,112,133,0.3)] bg-[#E42910]" style="transition: outline 0.1s ease-in-out;">
+                        Get Protected - 53% OFF
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-right" class="lucide lucide-arrow-right w-4 h-4"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                    </a>
+                    <a href="#how-it-works" class="flex items-center justify-center gap-2 bg-white/5 border border-white/10 text-white px-8 py-4 rounded-full text-base font-medium hover:bg-white/10 transition-colors" style="transition: outline 0.1s ease-in-out;">
+                        See How It Works
+                    </a>
+                </div>
+                
+                <div class="mt-8 flex items-center gap-4 text-sm text-white/40 font-light animate-reveal delay-300 opacity-100 translate-y-0" style="transition: outline 0.1s ease-in-out;">
+                    <div class="flex -space-x-2">
+                        <div class="w-8 h-8 rounded-full bg-zinc-800 border border-black flex items-center justify-center text-xs" style="transition: outline 0.1s ease-in-out;">A</div>
+                        <div class="w-8 h-8 rounded-full bg-zinc-700 border border-black flex items-center justify-center text-xs" style="transition: outline 0.1s ease-in-out;">M</div>
+                        <div class="w-8 h-8 rounded-full bg-zinc-600 border border-black flex items-center justify-center text-xs" style="transition: outline 0.1s ease-in-out;">J</div>
+                    </div>
+                    <p class="">Trusted by 10,000+ travelers worldwide</p>
+                </div>
+            </div>
+
+            <!-- Visual Representation with Layered PNG -->
+            <div class="relative flex items-center justify-center animate-reveal delay-200 opacity-100 translate-y-0 min-h-[500px]">
+                <!-- Radar Background Grid -->
+                <div class="radar-grid opacity-30 absolute top-0 right-0 bottom-0 left-0"></div>
+                
+                <!-- Background Glow for Device -->
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-gradient-to-tr from-[#FF7085]/10 to-[#E42910]/20 rounded-full blur-[80px] -z-10 animate-pulse"></div>
+
+                <!-- Active Scan Radar Ring Effect (Layered behind image) -->
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] h-[340px] border border-white/5 rounded-full z-0">
+                    <div class="absolute inset-0 rounded-full radar-sweep opacity-30 blur-md"></div>
+                </div>
+                
+                <!-- The Device Image -->
+                <div class="relative z-10 animate-float">
+                    <!-- Placeholder for the User's PNG -->
+                    <!-- Using a high-quality black remote placeholder to simulate the sleek black detector look -->
+                    <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/2b8b8d1e-e136-46bc-a00d-90c9bd194c0e_3840w.png" alt="SafeSense T66 Detector" class="transform transition-transform duration-500 hover:scale-105 mask-image: linear-gradient(to bottom, black 90%, transparent 100%); bg-center w-auto h-[480px] object-cover relative drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                    
+                    <!-- Artificial Glint/Reflections for realism -->
+                    <div class="absolute top-[10%] right-[20%] w-[1px] h-[100px] bg-gradient-to-b from-transparent via-white/20 to-transparent rotate-12 blur-[1px]"></div>
+                </div>
+
+                <!-- Floating Elements (Layered over graphics) -->
+                <div class="absolute top-20 right-0 glass-panel p-4 rounded-xl flex items-center gap-3 animate-bounce shadow-lg z-20 backdrop-blur-xl bg-black/40 border-white/10" style="animation-duration: 3s;">
+                    <div class="bg-red-500/20 p-2 rounded-lg text-red-400" style="transition: outline 0.1s ease-in-out;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="video" class="lucide lucide-video w-5 h-5"><path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"></path><rect x="2" y="6" width="14" height="12" rx="2"></rect></svg>
+                    </div>
+                    <div>
+                        <div class="text-[10px] tracking-wider text-white/50 uppercase font-semibold">Alert</div>
+                        <div class="text-sm font-medium text-white" style="transition: outline 0.1s ease-in-out;">Camera Detected</div>
+                    </div>
+                </div>
+
+                <div class="absolute bottom-10 left-0 glass-panel p-4 rounded-xl flex items-center gap-3 animate-bounce shadow-lg z-20 backdrop-blur-xl bg-black/40 border-white/10" style="animation-duration: 4s;">
+                    <div class="bg-blue-500/20 p-2 rounded-lg text-blue-400" style="transition: outline 0.1s ease-in-out;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="map-pin" class="lucide lucide-map-pin w-5 h-5"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    </div>
+                    <div class="">
+                        <div class="text-[10px] tracking-wider text-white/50 uppercase font-semibold">Scan</div>
+                        <div class="text-sm font-medium text-white" style="transition: outline 0.1s ease-in-out;">GPS Tracker Found</div>
+                    </div>
+                </div>
+                
+                <!-- Connection Line Graphic -->
+                <svg class="absolute inset-0 pointer-events-none z-10 opacity-30" width="100%" height="100%">
+                    <line x1="70%" y1="20%" x2="50%" y2="40%" stroke="url(#grad1)" stroke-width="1" stroke-dasharray="4 4"></line>
+                    <line x1="30%" y1="80%" x2="45%" y2="60%" stroke="url(#grad1)" stroke-width="1" stroke-dasharray="4 4"></line>
+                    <defs>
+                        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:rgba(255,255,255,0);stop-opacity:0"></stop>
+                            <stop offset="50%" style="stop-color:rgba(255,112,133,0.5);stop-opacity:1"></stop>
+                            <stop offset="100%" style="stop-color:rgba(255,255,255,0);stop-opacity:0"></stop>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- Problem / Solution Section -->
+    <section class="overflow-hidden bg-[#050505] border-white/5 border-t pt-24 pb-24 relative" id="how-it-works">
+    <style>
+        @keyframes equalizer {
+            0%, 100% { height: 20%; }
+            50% { height: 90%; }
+        }
+        @keyframes radar-spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+        @keyframes scan-line {
+            0% { top: 0%; opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+        .eq-bar { animation: equalizer 1s ease-in-out infinite; }
+        .radar-sweep { background: conic-gradient(from 0deg, transparent 0deg, rgba(228, 41, 16, 0.1) 60deg, rgba(228, 41, 16, 0.4) 360deg); animation: radar-spin 4s linear infinite; }
+    </style>
+
+    <div class="max-w-7xl z-10 mr-auto ml-auto pr-6 pl-6 relative">
+        <div class="text-center max-w-3xl mx-auto mb-20">
+            <h2 class="text-3xl md:text-5xl font-medium tracking-tight text-white mb-6">Military-Grade Defense</h2>
+            <p class="text-xl text-white/60 font-light leading-relaxed">
+                Comprehensive surveillance detection technology engineered for personal security.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+            <!-- Feature 1: Advanced Threat Detection -->
+            <div class="group relative bg-[#0A0A0A] border border-white/10 rounded-3xl p-8 hover:bg-white/[0.02] transition-colors overflow-hidden flex flex-col">
+                <div class="mb-8">
+                    <h3 class="text-2xl font-medium text-white tracking-tight mb-4">Advanced Threat Detection</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3 text-white/60 font-light text-lg">
+                            <svg class="w-5 h-5 mt-1 text-[#E42910]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Detects cameras, GPS, &amp; wireless bugs
+                        </li>
+                        <li class="flex items-start gap-3 text-white/60 font-light text-lg">
+                            <svg class="w-5 h-5 mt-1 text-[#E42910]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            98% accuracy up to 30ft range
+                        </li>
+                        <li class="flex items-start gap-3 text-white/60 font-light text-lg">
+                            <svg class="w-5 h-5 mt-1 text-[#E42910]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Wide-band 1MHz–8GHz scanning
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Interactive Visual: RF Spectrum -->
+                <div class="mt-auto bg-black rounded-xl border border-white/10 p-6 relative overflow-hidden h-64 flex flex-col justify-between group-hover:border-white/20 transition-colors">
+                    <div class="flex justify-between items-center mb-4">
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 rounded-full bg-[#E42910] animate-pulse"></div>
+                            <span class="text-xs font-mono text-white/40 uppercase tracking-widest">RF Spectrum</span>
+                        </div>
+                        <span class="text-xs font-mono text-[#E42910]">ACTIVE</span>
+                    </div>
+                    
+                    <div class="flex gap-1 h-32 mb-2 gap-x-1 gap-y-1 items-end justify-between">
+                        <!-- Equalizer Bars -->
+                        <div class="eq-bar bg-[#E42910]/20 w-full rounded-t-sm" style="animation-duration: 0.8s; animation-delay: 0.1s"></div>
+                        <div class="w-full bg-[#E42910]/40 rounded-t-sm eq-bar" style="animation-duration: 1.2s; animation-delay: 0.2s"></div>
+                        <div class="w-full bg-[#E42910]/60 rounded-t-sm eq-bar" style="animation-duration: 0.9s; animation-delay: 0.05s"></div>
+                        <div class="w-full bg-[#E42910] rounded-t-sm eq-bar" style="animation-duration: 0.6s; animation-delay: 0.3s"></div>
+                        <div class="w-full bg-[#E42910]/70 rounded-t-sm eq-bar" style="animation-duration: 1.1s; animation-delay: 0.15s"></div>
+                        <div class="w-full bg-[#E42910]/30 rounded-t-sm eq-bar" style="animation-duration: 1.3s; animation-delay: 0.4s"></div>
+                        <div class="w-full bg-[#E42910]/50 rounded-t-sm eq-bar" style="animation-duration: 0.7s; animation-delay: 0.2s"></div>
+                        <div class="w-full bg-[#E42910]/20 rounded-t-sm eq-bar" style="animation-duration: 1.0s; animation-delay: 0.1s"></div>
+                    </div>
+                    
+                    <div class="flex justify-between text-[10px] font-mono text-white/30 pt-4 border-t border-white/5">
+                        <span>1MHz</span>
+                        <span>2.4GHz</span>
+                        <span>5.8GHz</span>
+                        <span>8GHz</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature 2: Fast Scanning -->
+            <div class="group relative bg-[#0A0A0A] border border-white/10 rounded-3xl p-8 hover:bg-white/[0.02] transition-colors overflow-hidden flex flex-col">
+                <div class="mb-8">
+                    <h3 class="text-2xl font-medium text-white tracking-tight mb-4">Fast, Full-Space Scanning</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3 text-white/60 font-light text-lg">
+                            <svg class="w-5 h-5 mt-1 text-[#E42910]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Complete 360° room coverage
+                        </li>
+                        <li class="flex items-start gap-3 text-white/60 font-light text-lg">
+                            <svg class="w-5 h-5 mt-1 text-[#E42910]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Scans spaces in under 60 seconds
+                        </li>
+                        <li class="flex items-start gap-3 text-white/60 font-light text-lg">
+                            <svg class="w-5 h-5 mt-1 text-[#E42910]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Ideal for Airbnbs &amp; hotels
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Interactive Visual: Radar -->
+                <div class="mt-auto bg-black rounded-xl border border-white/10 p-6 relative overflow-hidden h-64 flex items-center justify-center group-hover:border-white/20 transition-colors">
+                     <!-- Grid Background -->
+                    <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:20px_20px]"></div>
+                    
+                    <div class="relative w-40 h-40">
+                        <!-- Radar Circles -->
+                        <div class="absolute inset-0 border border-[#E42910]/20 rounded-full"></div>
+                        <div class="absolute inset-8 border border-[#E42910]/20 rounded-full"></div>
+                        <div class="absolute inset-16 border border-[#E42910]/40 rounded-full"></div>
+                        
+                        <!-- Sweep -->
+                        <div class="absolute inset-0 rounded-full radar-sweep origin-center"></div>
+                        
+                        <!-- Blips -->
+                        <div class="absolute top-8 right-10 w-1.5 h-1.5 bg-white rounded-full shadow-[0_0_8px_white] animate-[blink_2s_infinite]"></div>
+                        <div class="absolute bottom-12 left-10 w-1.5 h-1.5 bg-[#E42910] rounded-full shadow-[0_0_8px_#E42910] animate-[blink_3s_infinite]"></div>
+                    </div>
+                    
+                    <div class="absolute bottom-4 left-6 text-xs font-mono text-white/40">
+                        RANGE: 10M
+                        STATUS: SCANNING
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature 3: Zero Setup -->
+            <div class="group relative bg-[#0A0A0A] border border-white/10 rounded-3xl p-8 hover:bg-white/[0.02] transition-colors overflow-hidden flex flex-col">
+                <div class="mb-8">
+                    <h3 class="text-2xl font-medium text-white tracking-tight mb-4" style="">Zero Setup, One-Button Use</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3 text-white/60 font-light text-lg">
+                            <svg class="w-5 h-5 mt-1 text-[#E42910]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Instant one-button operation
+                        </li>
+                        <li class="flex items-start gap-3 text-white/60 font-light text-lg">
+                            <svg class="w-5 h-5 mt-1 text-[#E42910]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Vibration, Beep &amp; LED alerts
+                        </li>
+                        <li class="flex items-start gap-3 text-white/60 font-light text-lg">
+                            <svg class="w-5 h-5 mt-1 text-[#E42910]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Silent mode for discreet use
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Interactive Visual: Interface -->
+                <div class="mt-auto bg-black rounded-xl border border-white/10 p-6 relative overflow-hidden h-64 flex flex-col justify-center items-center group-hover:border-white/20 transition-colors">
+                    <div class="relative w-full max-w-[200px]">
+                        <!-- Mode Slider -->
+                        <div class="flex items-center justify-between mb-8 px-4">
+                            <div class="flex flex-col items-center gap-2 text-[#E42910]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path><path d="M4 22h16"></path><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path><path d="M18 2h-6"></path></svg>
+                                <span class="text-[10px] font-mono tracking-wider opacity-100 font-bold">VIBE</span>
+                            </div>
+                            <div class="w-px h-8 bg-white/10"></div>
+                            <div class="flex flex-col items-center gap-2 text-white/40">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                <span class="text-[10px] font-mono tracking-wider">VISUAL</span>
+                            </div>
+                            <div class="w-px h-8 bg-white/10"></div>
+                            <div class="flex flex-col items-center gap-2 text-white/40">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
+                                <span class="text-[10px] font-mono tracking-wider">AUDIO</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Toggle Button -->
+                        <div class="w-full bg-white/5 h-14 rounded-full p-1 relative border border-white/10 cursor-pointer">
+                            <div class="absolute top-1 left-1 bottom-1 w-[45%] bg-[#E42910] rounded-full shadow-[0_0_15px_rgba(228,41,16,0.4)] flex items-center justify-center">
+                                <div class="w-1.5 h-6 bg-white/20 rounded-full"></div>
+                            </div>
+                            <div class="w-full h-full flex items-center justify-end px-6">
+                                <span class="text-[10px] font-mono font-bold text-white/30">MODE</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature 4: Portable Build -->
+            <div class="group relative bg-[#0A0A0A] border border-white/10 rounded-3xl p-8 hover:bg-white/[0.02] transition-colors overflow-hidden flex flex-col">
+                <div class="mb-8">
+                    <h3 class="text-2xl font-medium text-white tracking-tight mb-4" style="">Portable, Tactical Build</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3 text-white/60 font-light text-lg">
+                            <svg class="w-5 h-5 mt-1 text-[#E42910]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Pocket-sized tactical shell
+                        </li>
+                        <li class="flex items-start gap-3 text-white/60 font-light text-lg">
+                            <svg class="w-5 h-5 mt-1 text-[#E42910]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Up to 8-hour battery life
+                        </li>
+                        <li class="flex items-start gap-3 text-white/60 font-light text-lg">
+                            <svg class="w-5 h-5 mt-1 text-[#E42910]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            TSA-approved for travel
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Interactive Visual: Tech Specs -->
+                <div class="mt-auto bg-black rounded-xl border border-white/10 p-6 relative overflow-hidden h-64 flex flex-col justify-center gap-6 group-hover:border-white/20 transition-colors">
+                    
+                    <!-- Battery Status -->
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <div class="flex items-center gap-2 text-white/70">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="10" x="2" y="7" rx="2" ry="2"></rect><line x1="22" x2="22" y1="11" y2="13"></line></svg>
+                                <span class="text-xs font-mono font-medium">BATTERY</span>
+                            </div>
+                            <span class="text-xs font-mono text-[#E42910]">8 HRS</span>
+                        </div>
+                        <div class="h-1.5 w-full bg-white/10 rounded-full overflow-hidden">
+                            <div class="h-full bg-[#E42910] w-[85%] shadow-[0_0_10px_#E42910]"></div>
+                        </div>
+                    </div>
+
+                    <!-- Port Info -->
+                    <div class="flex items-center justify-between p-3 rounded-lg border border-white/5 bg-white/[0.02]">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-white/60">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-xs text-white font-medium">Rechargeable</span>
+                                <span class="text-[10px] text-white/40 font-mono">USB-C FAST CHARGE</span>
+                            </div>
+                        </div>
+                        <div class="w-1.5 h-1.5 rounded-full bg-green-500 shadow-[0_0_5px_rgba(34,197,94,0.5)]"></div>
+                    </div>
+                    
+                    <!-- Cert badge -->
+                     <div class="flex items-center gap-2 text-white/30 text-[10px] font-mono justify-end">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path></svg>
+                        TSA APPROVED
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Tech Specs / Comparison -->
+    <section class="bg-[#0a0a0a] pt-24 pb-24" style="transition: outline 0.1s ease-in-out" id="features">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1">
+                    <div class="relative rounded-2xl overflow-hidden border border-white/10 bg-[#121212] aspect-square flex items-center justify-center">
+                        <!-- Abstract Visualization of Range -->
+                        <div class="opacity-20 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] absolute top-0 right-0 bottom-0 left-0"></div>
+                        <div class="relative z-10 w-full px-12">
+                            <!-- Graph representation -->
+                            <div class="flex items-end justify-between h-48 gap-2">
+                                <div class="w-full h-[80%] rounded-t opacity-90 relative group bg-[#E42910]" style="transition: outline 0.1s ease-in-out;">
+                                    <div class="absolute -top-8 left-1/2 -translate-x-1/2 text-xs font-bold text-red-600" style="transition: outline 0.1s ease-in-out;">98%</div>
+                                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 text-[10px] text-black font-bold rotate-90 whitespace-nowrap">SafeSense T66</div>
+                                </div>
+                                <div class="bg-white/10 w-full h-[40%] rounded-t relative" style="transition: outline 0.1s ease-in-out">
+                                    <div class="absolute -top-8 left-1/2 -translate-x-1/2 text-xs text-white/40" style="transition: outline 0.1s ease-in-out;">60%</div>
+                                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 text-[10px] text-white/40 font-bold rotate-90 whitespace-nowrap" style="transition: outline 0.1s ease-in-out;">Generic</div>
+                                </div>
+                                <div class="w-full bg-white/10 h-[20%] rounded-t relative" style="transition: outline 0.1s ease-in-out;">
+                                    <div class="absolute -top-8 left-1/2 -translate-x-1/2 text-xs text-white/40" style="transition: outline 0.1s ease-in-out;">35%</div>
+                                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 text-[10px] text-white/40 font-bold rotate-90 whitespace-nowrap" style="transition: outline 0.1s ease-in-out;">Apps</div>
+                                </div>
+                            </div>
+                            <div class="mt-6 border-t border-white/10 pt-4 flex justify-between text-xs text-white/40 uppercase tracking-widest" style="transition: outline 0.1s ease-in-out;">
+                                <span>Detection Accuracy</span>
+                                <span>Range Test</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-1 lg:order-2">
+                    <h2 class="text-3xl md:text-5xl font-medium tracking-tight text-white mb-6" style="transition: outline 0.1s ease-in-out;">Not all detectors are created equal.</h2>
+                    <p class="text-lg text-white/60 font-light mb-8">
+                        Stop relying on flimsy plastic knockoffs or unreliable phone apps. The T66 is engineered for elite tactical performance.
+                    </p>
+                    
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-4">
+                            <div class="w-6 h-6 rounded-full bg-[#FF7085]/20 flex items-center justify-center mt-1 shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check w-3.5 h-3.5 text-red-600" style="transition: outline 0.1s ease-in-out;"><path d="M20 6 9 17l-5-5"></path></svg>
+                            </div>
+                            <div class="">
+                                <h4 class="text-white font-medium text-lg" style="transition: outline 0.1s ease-in-out;">Wideband RF Scanning</h4>
+                                <p class="text-white/50 font-light text-sm mt-1">Detects frequencies from 1MHz to 8GHz, covering GSM, WIFI, BT, FM, VHF, UHF, and wireless audio/video transmission.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-6 h-6 rounded-full bg-[#FF7085]/20 flex items-center justify-center mt-1 shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check w-3.5 h-3.5 text-red-600" style="transition: outline 0.1s ease-in-out;"><path d="M20 6 9 17l-5-5"></path></svg>
+                            </div>
+                            <div class="">
+                                <h4 class="text-white font-medium text-lg" style="transition: outline 0.1s ease-in-out;">Magnetic Field Detection</h4>
+                                <p class="text-white/50 font-light text-sm mt-1">High-sensitivity magnetic sensor specifically designed for standby GPS trackers that don't transmit signals constantly.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-6 h-6 rounded-full bg-[#FF7085]/20 flex items-center justify-center mt-1 shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check w-3.5 h-3.5 text-red-600" style="transition: outline 0.1s ease-in-out;"><path d="M20 6 9 17l-5-5"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-medium text-lg" style="transition: outline 0.1s ease-in-out;">30ft Detection Range</h4>
+                                <p class="text-white/50 font-light text-sm mt-1">Superior range compared to standard 10ft devices, allowing you to sweep entire rooms quickly.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section id="reviews" class="py-24 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl font-medium text-white mb-12 tracking-tight text-center" style="transition: outline 0.1s ease-in-out;">Peace of mind delivered.</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Review 1 -->
+                <div class="bg-[#121212] p-6 rounded-2xl border border-white/5">
+                    <div class="flex mb-4 text-red-600" style="transition: outline 0.1s ease-in-out;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" class="lucide lucide-star w-4 h-4 fill-current" style="transition: outline 0.1s ease-in-out;"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" class="lucide lucide-star w-4 h-4 fill-current" style="transition: outline 0.1s ease-in-out;"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" class="lucide lucide-star w-4 h-4 fill-current" style="transition: outline 0.1s ease-in-out;"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" class="lucide lucide-star w-4 h-4 fill-current" style="transition: outline 0.1s ease-in-out;"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" class="lucide lucide-star w-4 h-4 fill-current" style="transition: outline 0.1s ease-in-out;"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                    </div>
+                    <p class="text-white/80 font-light text-lg mb-6">"Found a tracker on my rental car during a trip to Miami. It was tucked way up in the wheel well. This thing started beeping like crazy. Worth every penny."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white font-medium" style="transition: outline 0.1s ease-in-out;">JD</div>
+                        <div class="text-sm">
+                            <div class="text-white font-medium" style="transition: outline 0.1s ease-in-out;">James D.</div>
+                            <div class="text-white/40" style="transition: outline 0.1s ease-in-out;">Verified Buyer</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Review 2 -->
+                <div class="bg-[#121212] p-6 rounded-2xl border border-white/5">
+                    <div class="flex mb-4 text-red-600" style="transition: outline 0.1s ease-in-out;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" class="lucide lucide-star w-4 h-4 fill-current" style="transition: outline 0.1s ease-in-out;"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" class="lucide lucide-star w-4 h-4 fill-current" style="transition: outline 0.1s ease-in-out;"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" class="lucide lucide-star w-4 h-4 fill-current" style="transition: outline 0.1s ease-in-out;"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" class="lucide lucide-star w-4 h-4 fill-current" style="transition: outline 0.1s ease-in-out;"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" class="lucide lucide-star w-4 h-4 fill-current" style="transition: outline 0.1s ease-in-out;"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                    </div>
+                    <p class="text-white/80 font-light text-lg mb-6">"As a flight attendant, I stay in random hotels constantly. The T66 is part of my uniform now. It's small, premium feeling, and incredibly accurate."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white font-medium" style="transition: outline 0.1s ease-in-out;">SL</div>
+                        <div class="text-sm">
+                            <div class="text-white font-medium" style="transition: outline 0.1s ease-in-out;">Sarah L.</div>
+                            <div class="text-white/40" style="transition: outline 0.1s ease-in-out;">Verified Buyer</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Review 3 -->
+                <div class="bg-[#121212] p-6 rounded-2xl border border-white/5">
+                    <div class="flex mb-4 text-red-600" style="transition: outline 0.1s ease-in-out;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" class="lucide lucide-star w-4 h-4 fill-current" style="transition: outline 0.1s ease-in-out;"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" class="lucide lucide-star w-4 h-4 fill-current" style="transition: outline 0.1s ease-in-out;"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" class="lucide lucide-star w-4 h-4 fill-current" style="transition: outline 0.1s ease-in-out;"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" class="lucide lucide-star w-4 h-4 fill-current" style="transition: outline 0.1s ease-in-out;"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" class="lucide lucide-star w-4 h-4 fill-current" style="transition: outline 0.1s ease-in-out;"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                    </div>
+                    <p class="text-white/80 font-light text-lg mb-6">"Design is sleek, feels like an Apple product or something from a sci-fi movie. Detected a wifi camera I set up to test it instantly."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white font-medium" style="transition: outline 0.1s ease-in-out;">MR</div>
+                        <div class="text-sm">
+                            <div class="text-white font-medium" style="transition: outline 0.1s ease-in-out;">Mike R.</div>
+                            <div class="text-white/40" style="transition: outline 0.1s ease-in-out;">Verified Buyer</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing / CTA -->
+    <section id="pricing" class="py-24 relative overflow-hidden">
+        <!-- Background Gradient Mesh -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full blur-[180px] opacity-[0.05] pointer-events-none bg-[#E42910]" style="transition: outline 0.1s ease-in-out;"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <span class="font-medium tracking-wide text-sm uppercase mb-3 block text-red-600" style="transition: outline 0.1s ease-in-out;">Q4 Flash Sale Ends Soon</span>
+                <h2 class="text-4xl md:text-5xl font-medium text-white tracking-tight mb-4" style="transition: outline 0.1s ease-in-out;">Secure your privacy today.</h2>
+                <p class="text-white/50 text-lg">Free 5-7 Day Worldwide Shipping Included.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8 items-start max-w-5xl mx-auto">
+                
+                <!-- Single Pack -->
+                <div class="glass-panel p-8 rounded-2xl border border-white/10 flex flex-col hover:border-white/20 transition-all">
+                    <div class="mb-4">
+                        <h3 class="text-xl font-medium text-white" style="transition: outline 0.1s ease-in-out;">Starter</h3>
+                        <p class="text-white/50 text-sm mt-1">For personal travel safety.</p>
+                    </div>
+                    <div class="mb-8 flex items-baseline gap-2">
+                        <span class="text-4xl font-semibold text-white" style="transition: outline 0.1s ease-in-out;">$69.99</span>
+                        <span class="text-white/40 line-through text-lg" style="transition: outline 0.1s ease-in-out;">$149.99</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 flex-1">
+                        <li class="flex items-center gap-3 text-sm text-white/70">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check w-4 h-4 text-red-600" style="transition: outline 0.1s ease-in-out;"><path d="M20 6 9 17l-5-5"></path></svg> 1x SafeSense™ T66
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-white/70">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check w-4 h-4 text-red-600" style="transition: outline 0.1s ease-in-out;"><path d="M20 6 9 17l-5-5"></path></svg> Charging Cable
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-white/70">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check w-4 h-4 text-red-600" style="transition: outline 0.1s ease-in-out;"><path d="M20 6 9 17l-5-5"></path></svg> User Manual
+                        </li>
+                    </ul>
+                    <button class="w-full py-3 rounded-lg border border-white/20 text-white font-medium hover:bg-white hover:text-black transition-colors" style="transition: outline 0.1s ease-in-out;">
+                        Buy Now
+                    </button>
+                    <div class="mt-4 text-center text-xs font-medium text-red-600" style="transition: outline 0.1s ease-in-out;">Save 53%</div>
+                </div>
+
+                <!-- 2-Pack (Featured) -->
+                <div class="flex flex-col z-10 bg-[#121212] border-[#E42910] border rounded-2xl pt-8 pr-8 pb-8 pl-8 relative shadow-[0_0_30px_rgba(255,112,133,0.1)] scale-105" style="transition: outline 0.1s ease-in-out">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide shadow-lg bg-[#E42910]" style="transition: outline 0.1s ease-in-out;">
+                        Most Popular
+                    </div>
+                    <div class="mb-4">
+                        <h3 class="text-xl font-medium text-white" style="transition: outline 0.1s ease-in-out;">Partner Bundle</h3>
+                        <p class="text-white/50 text-sm mt-1">Keep one, gift one.</p>
+                    </div>
+                    <div class="mb-8 flex items-baseline gap-2">
+                        <span class="text-4xl font-semibold text-white" style="transition: outline 0.1s ease-in-out;">$119</span>
+                        <span class="text-white/40 text-lg" style="transition: outline 0.1s ease-in-out;">/ bundle</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 flex-1">
+                        <li class="flex items-center gap-3 text-sm text-white" style="transition: outline 0.1s ease-in-out;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check w-4 h-4 text-red-600" style="transition: outline 0.1s ease-in-out;"><path d="M20 6 9 17l-5-5"></path></svg>  SafeSense™ T66 Devices
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-white" style="transition: outline 0.1s ease-in-out;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check w-4 h-4 text-red-600" style="transition: outline 0.1s ease-in-out;"><path d="M20 6 9 17l-5-5"></path></svg> Free Priority Shipping
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-white" style="transition: outline 0.1s ease-in-out;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check w-4 h-4 text-red-600" style="transition: outline 0.1s ease-in-out;"><path d="M20 6 9 17l-5-5"></path></svg> 24/7 Support
+                        </li>
+                    </ul>
+                    <button class="w-full py-3 rounded-lg text-white font-medium hover:bg-[#ff5670] transition-colors shadow-lg shadow-red-900/20 bg-[#E42910]" style="transition: outline 0.1s ease-in-out;">
+                        Add to Cart
+                    </button>
+                    <div class="mt-4 text-center text-xs text-white/50">Save additional 20%</div>
+                </div>
+
+                <!-- 3-Pack -->
+                <div class="glass-panel p-8 rounded-2xl border border-white/10 flex flex-col hover:border-white/20 transition-all">
+                    <div class="mb-4">
+                        <h3 class="text-xl font-medium text-white" style="transition: outline 0.1s ease-in-out;">Family Pack</h3>
+                        <p class="text-white/50 text-sm mt-1">Total home &amp; car coverage.</p>
+                    </div>
+                    <div class="mb-8 flex items-baseline gap-2">
+                        <span class="text-4xl font-semibold text-white" style="transition: outline 0.1s ease-in-out;">$159</span>
+                        <span class="text-white/40 text-lg" style="transition: outline 0.1s ease-in-out;">/ bundle</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 flex-1">
+                        <li class="flex items-center gap-3 text-sm text-white/70">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check w-4 h-4 text-red-600" style="transition: outline 0.1s ease-in-out;"><path d="M20 6 9 17l-5-5"></path></svg>  SafeSense™ T66 Devices
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-white/70">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check w-4 h-4 text-red-600" style="transition: outline 0.1s ease-in-out;"><path d="M20 6 9 17l-5-5"></path></svg> Express 2-3 Day Shipping
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-white/70">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check w-4 h-4 text-red-600" style="transition: outline 0.1s ease-in-out;"><path d="M20 6 9 17l-5-5"></path></svg> Best Value
+                        </li>
+                    </ul>
+                    <button class="w-full py-3 rounded-lg border border-white/20 text-white font-medium hover:bg-white hover:text-black transition-colors" style="transition: outline 0.1s ease-in-out;">
+                        Buy Now
+                    </button>
+                    <div class="mt-4 text-center text-xs font-medium text-red-600" style="transition: outline 0.1s ease-in-out;">Save 30%</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 bg-black pt-16 pb-8">
+        <div class="max-w-7xl mr-auto ml-auto pr-6 pl-6">
+            <div class="flex flex-col md:flex-row justify-between items-start mb-12">
+                <div class="mb-8 md:mb-0">
+                   <div class="flex items-center gap-1 mb-4">
+                        <div class="w-5 h-5 border border-white/80 rounded flex items-center justify-center">
+                            <div class="w-1 h-1 rounded-full bg-[#E42910]" style="transition: outline 0.1s ease-in-out;"></div>
+                        </div>
+                        <div class="ml-2 text-lg tracking-tight">
+                            <span class="font-medium text-white" style="transition: outline 0.1s ease-in-out;">SAFE</span><span class="font-light text-white/70">SENSE</span>
+                        </div>
+                    </div>
+                    <p class="text-white/40 text-sm max-w-xs" style="transition: outline 0.1s ease-in-out;">
+                        Defining the future of personal privacy protection with military-grade technology.
+                    </p>
+                </div>
+                
+                <div class="flex gap-16">
+                    <div>
+                        <h4 class="text-white font-medium mb-4 text-sm" style="transition: outline 0.1s ease-in-out;">Product</h4>
+                        <ul class="space-y-2 text-sm text-white/40" style="transition: outline 0.1s ease-in-out;">
+                            <li><a href="#" class="hover:text-white transition-colors" style="transition: outline 0.1s ease-in-out;">Features</a></li>
+                            <li><a href="#" class="hover:text-white transition-colors" style="transition: outline 0.1s ease-in-out;">Technology</a></li>
+                            <li><a href="#" class="hover:text-white transition-colors" style="transition: outline 0.1s ease-in-out;">Pricing</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-medium mb-4 text-sm" style="transition: outline 0.1s ease-in-out;">Company</h4>
+                        <ul class="space-y-2 text-sm text-white/40" style="transition: outline 0.1s ease-in-out;">
+                            <li><a href="#" class="hover:text-white transition-colors" style="transition: outline 0.1s ease-in-out;">About</a></li>
+                            <li><a href="#" class="hover:text-white transition-colors" style="transition: outline 0.1s ease-in-out;">Contact</a></li>
+                            <li><a href="#" class="hover:text-white transition-colors" style="transition: outline 0.1s ease-in-out;">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-white/30 text-xs">© 2024 SafeSense Inc. All rights reserved.</p>
+                <div class="flex items-center gap-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="credit-card" class="lucide lucide-credit-card w-5 h-5 text-white/30"><rect width="20" height="14" x="2" y="5" rx="2"></rect><line x1="2" x2="22" y1="10" y2="10"></line></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="lock" class="lucide lucide-lock w-4 h-4 text-white/30"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons({
+            attrs: {
+                'stroke-width': 1.5
+            }
+        });
+
+        // Simple Scroll Reveal Animation
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.remove('opacity-0', 'translate-y-4');
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    observer.unobserve(entry.target); // Only animate once
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-reveal').forEach((el) => {
+            observer.observe(el);
+        });
+    </script>
+
+</body></html>
