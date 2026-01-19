@@ -1,0 +1,32 @@
+Urban Performance Lab E-commerce Landing Page Template
+
+A sleek, editorial-style e-commerce landing page template for curated athletic footwear and apparel reviews, guides, and affiliate product recommendations.
+
+Urban Performance Lab is a modern landing page template for curated athletic footwear and apparel, optimized for affiliate and review-driven brands.
+
+What's Included
+Hero section with bold imagery and dual CTAs
+Curated collections grid (Running, Lifestyle, Training)
+Product cards for affiliate e-commerce with pricing and outbound CTAs
+Featured in-depth review module with ratings bars
+Blog-style guides section for style and performance content
+About and footer with social links, navigation, and legal copy
+Key Features
+Clean, editorial aesthetic with large type
+Affiliate-ready product layouts ("Buy at" links)
+Review-focused design with scores and highlights
+Content hubs for guides and news
+Responsive Tailwind CSS structure for easy customization
+Primary use case: launch a brand-forward sneaker or performance gear review hub that blends e-commerce, editorial content, and affiliate monetization in one cohesive template.
+
+
+Tags:
+
+E-commerce
+Landing Page
+Brand
+Style
+Clean
+Minimal
+Large Type
+Technology
