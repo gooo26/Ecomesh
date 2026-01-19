@@ -1,0 +1,691 @@
+<html lang="fr"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LUSINE - Divans et chaises</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+body { font-family: 'DM Sans', sans-serif; }
+.font-serif { font-family: 'Playfair Display', serif; }
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+-ms-overflow-style: none;  /* IE and Edge */
+scrollbar-width: none;  /* Firefox */
+}
+</style>
+<link id="all-fonts-link-font-geist" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist">
+.font-geist { font-family: 'Geist', sans-serif !important; }
+</style><link id="all-fonts-link-font-roboto" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-roboto">
+.font-roboto { font-family: 'Roboto', sans-serif !important; }
+</style><link id="all-fonts-link-font-montserrat" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-montserrat">
+.font-montserrat { font-family: 'Montserrat', sans-serif !important; }
+</style><link id="all-fonts-link-font-poppins" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-poppins">
+.font-poppins { font-family: 'Poppins', sans-serif !important; }
+</style><link id="all-fonts-link-font-playfair" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&amp;display=swap"><style id="all-fonts-style-font-playfair">
+.font-playfair { font-family: 'Playfair Display', serif !important; }
+</style><link id="all-fonts-link-font-instrument-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-instrument-serif">
+.font-instrument-serif { font-family: 'Instrument Serif', serif !important; }
+</style><link id="all-fonts-link-font-merriweather" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&amp;display=swap"><style id="all-fonts-style-font-merriweather">
+.font-merriweather { font-family: 'Merriweather', serif !important; }
+</style><link id="all-fonts-link-font-bricolage" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-bricolage">
+.font-bricolage { font-family: 'Bricolage Grotesque', sans-serif !important; }
+</style><link id="all-fonts-link-font-jakarta" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-jakarta">
+.font-jakarta { font-family: 'Plus Jakarta Sans', sans-serif !important; }
+</style><link id="all-fonts-link-font-manrope" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-manrope">
+.font-manrope { font-family: 'Manrope', sans-serif !important; }
+</style><link id="all-fonts-link-font-space-grotesk" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-space-grotesk">
+.font-space-grotesk { font-family: 'Space Grotesk', sans-serif !important; }
+</style><link id="all-fonts-link-font-work-sans" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-work-sans">
+.font-work-sans { font-family: 'Work Sans', sans-serif !important; }
+</style><link id="all-fonts-link-font-pt-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&amp;display=swap"><style id="all-fonts-style-font-pt-serif">
+.font-pt-serif { font-family: 'PT Serif', serif !important; }
+</style><link id="all-fonts-link-font-geist-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist-mono">
+.font-geist-mono { font-family: 'Geist Mono', monospace !important; }
+</style><link id="all-fonts-link-font-space-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;display=swap"><style id="all-fonts-style-font-space-mono">
+.font-space-mono { font-family: 'Space Mono', monospace !important; }
+</style><link id="all-fonts-link-font-quicksand" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-quicksand">
+.font-quicksand { font-family: 'Quicksand', sans-serif !important; }
+</style><link id="all-fonts-link-font-nunito" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-nunito">
+.font-nunito { font-family: 'Nunito', sans-serif !important; }
+</style><link id="all-fonts-link-font-newsreader" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..800&amp;display=swap"><style id="all-fonts-style-font-newsreader">
+.font-newsreader { font-family: 'Newsreader', serif !important; }
+</style><link id="all-fonts-link-font-google-sans-flex" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-google-sans-flex">
+.font-google-sans-flex { font-family: 'Google Sans Flex', sans-serif !important; }
+</style><link id="all-fonts-link-font-oswald" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-oswald">
+.font-oswald { font-family: 'Oswald', sans-serif !important; }
+</style><link id="all-fonts-link-font-dm-sans" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-dm-sans">
+.font-dm-sans { font-family: 'DM Sans', sans-serif !important; }
+</style><link id="all-fonts-link-font-cormorant" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-cormorant">.font-cormorant { font-family: 'Cormorant Garamond', serif !important; }</style></head>
+  <body class="bg-white text-[#1F1F1F] antialiased">
+    <!-- Announcement Bar -->
+    <div class="bg-[#1A3C34] text-white py-3 px-4 text-center text-base">
+      <p class="font-medium tracking-wide">
+        Livraison gratuite dès 899 $ d'achat en ligne.
+        <a href="#" class="underline underline-offset-4 decoration-1 opacity-90 hover:opacity-100">
+          Plus de détails ici*
+        </a>
+      </p>
+    </div>
+
+    <!-- Header -->
+    <header class="sticky transition-all duration-300 md:pl-12 md:pr-12 md:pt-8 md:pb-8 bg-[#dfdbd1]/95 z-50 border-transparent border-b pt-6 pr-12 pb-4 pl-12 top-0 backdrop-blur-sm">
+      <div class="flex bg-[#dfdbd1] max-w-[1800px] mr-auto ml-auto items-center justify-between">
+        <!-- Logo -->
+        <a href="#" class="border-[1.5px] border-[#1F1F1F] px-4 py-2 hover:bg-[#1F1F1F] hover:text-white transition-colors duration-300">
+          <span class="font-sans text-xl tracking-[0.25em] font-semibold uppercase">
+            LUSINE
+          </span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center space-x-10 text-lg font-medium text-gray-600">
+          <div class="group relative flex items-center cursor-pointer gap-1 hover:text-black transition-colors">
+            <span class="">Pièces</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" class="lucide lucide-chevron-down w-4 h-4 stroke-[1.5]">
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </div>
+          <div class="group relative flex items-center cursor-pointer gap-1 hover:text-black transition-colors">
+            <span class="">Assises</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" class="lucide lucide-chevron-down w-4 h-4 stroke-[1.5]">
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </div>
+          <div class="group relative flex items-center cursor-pointer gap-1 hover:text-black transition-colors">
+            <span class="">Tables</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" class="lucide lucide-chevron-down w-4 h-4 stroke-[1.5]">
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </div>
+          <div class="group relative flex items-center cursor-pointer gap-1 hover:text-black transition-colors">
+            <span class="">Lits</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" class="lucide lucide-chevron-down w-4 h-4 stroke-[1.5]">
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </div>
+          <div class="group relative flex items-center cursor-pointer gap-1 hover:text-black transition-colors">
+            <span class="">Déco</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" class="lucide lucide-chevron-down w-4 h-4 stroke-[1.5]">
+              <path d="m6 9 6 6 6-6" class=""></path>
+            </svg>
+          </div>
+          <div class="group relative flex items-center cursor-pointer gap-1 text-[#C0562F] hover:text-[#A04625] transition-colors">
+            <span class="">Soldes</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" class="lucide lucide-chevron-down w-4 h-4 stroke-[1.5]">
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </div>
+        </nav>
+
+        <!-- Utility Icons -->
+        <div class="flex items-center space-x-6 text-[#1F1F1F]">
+          <div class="hidden md:flex items-center gap-2 cursor-pointer font-medium hover:opacity-70">
+            <span class="text-lg">FR</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" class="lucide lucide-chevron-down w-4 h-4 stroke-[1.5]">
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </div>
+          <a href="#" class="hover:opacity-70 transition-opacity">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" class="lucide lucide-user w-6 h-6 stroke-[1.5]">
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </a>
+          <a href="#" class="hover:opacity-70 transition-opacity">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="search" class="lucide lucide-search w-6 h-6 stroke-[1.5]">
+              <path d="m21 21-4.34-4.34"></path>
+              <circle cx="11" cy="11" r="8"></circle>
+            </svg>
+          </a>
+          <a href="#" class="relative hover:opacity-70 transition-opacity">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="shopping-bag" class="lucide lucide-shopping-bag w-6 h-6 stroke-[1.5]">
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+              <path d="M3.103 6.034h17.794"></path>
+              <path d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z" class=""></path>
+            </svg>
+            <span class="absolute -top-1 -right-1 bg-[#1A3C34] text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
+              0
+            </span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="md:pt-12 md:pl-10 md:pr-10 max-w-[1920px] mr-auto ml-auto pt-12 pr-5 pb-10 pl-5 gap-x-2 gap-y-10">
+      <!-- Header Section -->
+      <div class="flex flex-col text-left mb-16 items-start justify-start">
+        <h1 class="md:text-7xl text-5xl text-slate-950 tracking-tight font-serif mb-4">
+          Divans et chaises
+        </h1>
+        <p class="md:text-2xl text-xl font-normal text-gray-600 max-w-2xl mb-8">
+          Confortables, élégants, et entièrement modulaires.
+        </p>
+
+        <!-- Filters -->
+        <div class="flex items-center gap-3">
+          <button class="flex items-center justify-between gap-2 px-5 py-2 bg-[#F3EFE8] rounded-full hover:bg-[#E5E0D8] transition-colors text-base font-medium text-[#1F1F1F]">
+            <span class="">Type</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" class="lucide lucide-chevron-down w-4 h-4 text-gray-500 stroke-[1.5]">
+              <path d="m6 9 6 6 6-6" class=""></path>
+            </svg>
+          </button>
+          <button class="flex items-center justify-between gap-2 px-5 py-2 bg-[#F3EFE8] rounded-full hover:bg-[#E5E0D8] transition-colors text-base font-medium text-[#1F1F1F]">
+            <span class="">Couleur</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="chevron-down" class="lucide lucide-chevron-down w-4 h-4 text-gray-500 stroke-[1.5]">
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Product Grid - 3 Columns with Integrated Promo Card -->
+      <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 md:gap-x-6 md:gap-y-12 px-0 scale-100 gap-x-2 gap-y-10">
+        <!-- Product 1: Ciello -->
+        <div class="group cursor-pointer relative">
+  <div class="aspect-square overflow-hidden bg-[#F6F6F6] rounded-none mb-5 relative">
+    <!-- Variant 1: Grey (Default Active) -->
+    <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/e075dc14-b4ce-4b8e-ae8a-5202a89eda02_1600w.png" alt="Modulaire Delano - Grey" class="group-hover:scale-105 transition-transform duration-700 ease-out w-full h-full object-cover absolute top-0 right-0 bottom-0 left-0" data-img-index="0">
+    
+    <!-- Variant 2: Brown -->
+    <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/99786dd4-640c-468e-b90e-3c56ad9942f8_1600w.png" alt="Modulaire Delano - Brown" class="group-hover:scale-105 transition-transform duration-700 ease-out w-full h-full object-cover absolute top-0 right-0 bottom-0 left-0" data-img-index="1">
+    
+    <!-- Variant 3: Beige -->
+    <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/29f2c277-00d2-4c85-9bc7-a82e24ee2738_1600w.png" alt="Modulaire Delano - Beige" class="group-hover:scale-105 transition-transform duration-700 ease-out w-full h-full object-cover absolute top-0 right-0 bottom-0 left-0" data-img-index="2">
+    
+    <!-- Variant 4: Dark Grey -->
+    <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/7ab67370-3caa-46e5-af60-060d25975209_1600w.png" alt="Modulaire Delano - Dark Grey" class="group-hover:scale-105 transition-transform duration-700 ease-out w-full h-full object-cover absolute top-0 right-0 bottom-0 left-0" data-img-index="3">
+  </div>
+
+  <div class="flex flex-col gap-1 pr-1 pl-1 gap-x-1 gap-y-1">
+    <div class="flex w-full items-baseline justify-between">
+      <h3 class="text-base font-medium text-[#0B1E3D] tracking-tight">
+        Modulaire Delano 4 sièges
+      </h3>
+      <span class="text-sm text-gray-400 font-light">$1795</span>
+    </div>
+    <div class="flex gap-2 mt-2 items-center">
+      <!-- Variant 1 Btn: Grey -->
+      <div data-color-btn="" data-index="0" class="cursor-pointer transition-all duration-200 hover:scale-110 bg-[#b1b2aa] w-6 h-6 border rounded-full shadow-sm" onmouseenter="const r=this.closest('.group');const i=this.dataset.index;r.querySelectorAll('[data-img-index]').forEach(e=&gt;e.classList.toggle('hidden',e.dataset.imgIndex!==i));r.querySelectorAll('[data-color-btn]').forEach(b=&gt;{b.classList.remove('border-black');b.classList.add('border-transparent')});this.classList.remove('border-transparent');this.classList.add('border-black');" onclick="event.stopPropagation();const r=this.closest('.group');const i=this.dataset.index;r.querySelectorAll('[data-img-index]').forEach(e=&gt;e.classList.toggle('hidden',e.dataset.imgIndex!==i));r.querySelectorAll('[data-color-btn]').forEach(b=&gt;{b.classList.remove('border-black');b.classList.add('border-transparent')});this.classList.remove('border-transparent');this.classList.add('border-black');"></div>
+
+      <!-- Variant 2 Btn: Brown -->
+      <div data-color-btn="" data-index="1" class="cursor-pointer transition-all duration-200 hover:scale-110 bg-[#7a573b] w-6 h-6 border rounded-full shadow-sm" onmouseenter="const r=this.closest('.group');const i=this.dataset.index;r.querySelectorAll('[data-img-index]').forEach(e=&gt;e.classList.toggle('hidden',e.dataset.imgIndex!==i));r.querySelectorAll('[data-color-btn]').forEach(b=&gt;{b.classList.remove('border-black');b.classList.add('border-transparent')});this.classList.remove('border-transparent');this.classList.add('border-black');" onclick="event.stopPropagation();const r=this.closest('.group');const i=this.dataset.index;r.querySelectorAll('[data-img-index]').forEach(e=&gt;e.classList.toggle('hidden',e.dataset.imgIndex!==i));r.querySelectorAll('[data-color-btn]').forEach(b=&gt;{b.classList.remove('border-black');b.classList.add('border-transparent')});this.classList.remove('border-transparent');this.classList.add('border-black');"></div>
+
+      <!-- Variant 3 Btn: Beige -->
+      <div data-color-btn="" data-index="2" class="cursor-pointer transition-all duration-200 hover:scale-110 bg-[#b6a792] w-6 h-6 border rounded-full shadow-sm" onmouseenter="const r=this.closest('.group');const i=this.dataset.index;r.querySelectorAll('[data-img-index]').forEach(e=&gt;e.classList.toggle('hidden',e.dataset.imgIndex!==i));r.querySelectorAll('[data-color-btn]').forEach(b=&gt;{b.classList.remove('border-black');b.classList.add('border-transparent')});this.classList.remove('border-transparent');this.classList.add('border-black');" onclick="event.stopPropagation();const r=this.closest('.group');const i=this.dataset.index;r.querySelectorAll('[data-img-index]').forEach(e=&gt;e.classList.toggle('hidden',e.dataset.imgIndex!==i));r.querySelectorAll('[data-color-btn]').forEach(b=&gt;{b.classList.remove('border-black');b.classList.add('border-transparent')});this.classList.remove('border-transparent');this.classList.add('border-black');"></div>
+
+      <!-- Variant 4 Btn: Dark Grey -->
+      <div data-color-btn="" data-index="3" class="cursor-pointer transition-all duration-200 hover:scale-110 bg-[#6c6d68] w-6 h-6 border rounded-full shadow-sm" onmouseenter="const r=this.closest('.group');const i=this.dataset.index;r.querySelectorAll('[data-img-index]').forEach(e=&gt;e.classList.toggle('hidden',e.dataset.imgIndex!==i));r.querySelectorAll('[data-color-btn]').forEach(b=&gt;{b.classList.remove('border-black');b.classList.add('border-transparent')});this.classList.remove('border-transparent');this.classList.add('border-black');" onclick="event.stopPropagation();const r=this.closest('.group');const i=this.dataset.index;r.querySelectorAll('[data-img-index]').forEach(e=&gt;e.classList.toggle('hidden',e.dataset.imgIndex!==i));r.querySelectorAll('[data-color-btn]').forEach(b=&gt;{b.classList.remove('border-black');b.classList.add('border-transparent')});this.classList.remove('border-transparent');this.classList.add('border-black');"></div>
+    </div>
+  </div>
+</div>
+
+        <!-- Product 2: Atmosphere -->
+        <div class="group cursor-pointer" style="">
+          <div class="aspect-square bg-[#F6F6F6] rounded-none overflow-hidden mb-5 relative" style="">
+            <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/21b95341-07ff-4920-8e58-f1e4736ebcc8_1600w.png" alt="Sofa Beige" class="group-hover:scale-105 transition-transform duration-700 ease-out w-full h-full object-cover">
+            <div class="absolute top-5 right-5">
+              <span class="bg-[#1A3C34] text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wider">
+                Nouveau
+              </span>
+            </div>
+          </div>
+          <div class="flex flex-col gap-1 px-1">
+            <div class="flex justify-between items-baseline w-full" style="">
+              <h3 class="text-base font-semibold text-[#0B1E3D] tracking-tight">
+                Modulaire Austin 2 sièges
+              </h3>
+              <span class="text-sm text-gray-400 font-medium">$1960</span>
+            </div>
+            <div class="flex items-center gap-2 mt-2"></div>
+          </div>
+        </div>
+
+        <!-- Promo Card (Pop-up style) - Stays in Grid -->
+        <div class="group relative aspect-square w-full h-full bg-[#E5B044] rounded-[2rem] overflow-hidden cursor-pointer">
+          <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/b7c1f48c-9387-4a66-abde-77e0d0980fdd_1600w.jpg" class="group-hover:scale-105 transition-transform duration-700 ease-out w-full h-full object-cover z-10 absolute top-0 right-0 bottom-0 left-0">
+          <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/10"></div>
+
+          <div class="flex flex-col z-10 h-full pt-6 pr-6 pb-6 pl-6 relative justify-between">
+            <h3 class="leading-tight text-2xl md:text-3xl font-medium text-white tracking-tight font-serif max-w-sm drop-shadow-md">Le confort que l’on ressent vraiment</h3>
+
+            <div class="flex justify-start">
+              <span class="hover:bg-gray-100 transition-colors text-xs font-semibold text-slate-950 bg-white rounded-full pt-2 pr-4 pb-2 pl-4 shadow-sm">Magasinez Delano</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="group cursor-pointer">
+          <div class="aspect-square bg-[#F6F6F6] rounded-none overflow-hidden mb-5 relative">
+            <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/0af5fb01-1672-42be-a248-db2b2b6571c7_1600w.png" alt="Sofa White" class="group-hover:scale-105 transition-transform duration-700 ease-out w-full h-full object-cover">
+            <div class="absolute top-5 right-5">
+              <span class="bg-[#1A3C34] text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wider">
+                Nouveau
+              </span>
+            </div>
+          </div>
+          <div class="flex flex-col gap-1 px-1">
+            <div class="flex justify-between items-baseline w-full">
+              <h3 class="text-base font-semibold text-[#0B1E3D] tracking-tight">Modulaire Delano 3 sièges</h3>
+              <span class="text-sm text-gray-400 font-medium">$3200</span>
+            </div>
+            <div class="flex items-center gap-2 mt-2"></div>
+          </div>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="group cursor-pointer">
+          <div class="aspect-square bg-[#F6F6F6] rounded-none overflow-hidden mb-5 relative">
+            <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/13d0e030-1f8b-49e0-b195-58cd06d5c7da_1600w.png" alt="Lounge Sofa" class="group-hover:scale-105 transition-transform duration-700 ease-out w-full h-full object-cover">
+            <div class="absolute top-5 right-5">
+              <span class="bg-[#C0562F] text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wider">
+                Solde
+              </span>
+            </div>
+          </div>
+          <div class="flex flex-col gap-1 px-1">
+            <div class="flex justify-between items-baseline w-full">
+              <h3 class="text-base font-semibold text-[#0B1E3D] tracking-tight">
+                Modulaire Tempa 4 sièges
+              </h3>
+              <div class="flex gap-2 text-sm font-medium">
+                <span class="text-[#C0562F]">$4200</span>
+                <span class="text-gray-300 line-through">$5000</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 mt-2"></div>
+          </div>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="group cursor-pointer">
+          <div class="aspect-square bg-[#F6F6F6] rounded-none overflow-hidden mb-5 relative">
+            <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/1840c1bb-3591-422a-9017-1aac492137bd_1600w.png" alt="Armchair" class="group-hover:scale-105 transition-transform duration-700 ease-out w-full h-full object-cover">
+          </div>
+          <div class="flex flex-col gap-1 px-1">
+            <div class="flex w-full items-baseline justify-between">
+              <h3 class="text-base font-semibold text-[#0B1E3D] tracking-tight">
+                Modulaire Emma 3 sièges
+              </h3>
+              <span class="text-sm font-medium text-gray-400">$3476</span>
+            </div>
+            <div class="flex items-center gap-2 mt-2"></div>
+          </div>
+        </div>
+
+        <!-- Product 7 -->
+        <div class="group cursor-pointer">
+          <div class="aspect-square bg-[#F6F6F6] rounded-none overflow-hidden mb-5 relative">
+            <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/99786dd4-640c-468e-b90e-3c56ad9942f8_1600w.png" alt="Green Velvet Sofa" class="group-hover:scale-105 transition-transform duration-700 ease-out w-full h-full object-cover">
+            <div class="absolute top-5 right-5">
+              <span class="bg-[#1A3C34] text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wider">
+                Nouveau
+              </span>
+            </div>
+          </div>
+          <div class="flex flex-col gap-1 px-1">
+            <div class="flex justify-between items-baseline w-full">
+              <h3 class="text-base font-semibold text-[#0B1E3D] tracking-tight">
+                Modulaire Delano 4 sièges
+              </h3>
+              <span class="text-sm text-gray-400 font-medium">$2150</span>
+            </div>
+            <div class="flex items-center gap-2 mt-2"></div>
+          </div>
+        </div>
+
+        <!-- Product 8 -->
+        <div class="group cursor-pointer">
+          <div class="aspect-square bg-[#F6F6F6] rounded-none overflow-hidden mb-5 relative">
+            <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/1139e521-a013-4119-bb9e-ba559a76708a_1600w.png" alt="White Chair" class="group-hover:scale-105 transition-transform duration-700 ease-out w-full h-full object-cover">
+          </div>
+          <div class="flex flex-col gap-1 px-1">
+            <div class="flex justify-between items-baseline w-full">
+              <h3 class="text-base font-semibold text-[#0B1E3D] tracking-tight">
+                Modulaire Flex
+              </h3>
+              <span class="text-sm font-medium text-gray-400">$6515</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 9 -->
+        <div class="group cursor-pointer">
+          <div class="aspect-square bg-[#F6F6F6] rounded-none overflow-hidden mb-5 relative">
+            <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/08ebd028-0820-4c94-b39f-d97d3749c2ef_1600w.png" alt="Modern Couch" class="group-hover:scale-105 transition-transform duration-700 ease-out w-full h-full object-cover">
+          </div>
+          <div class="flex flex-col gap-1 px-1">
+            <div class="flex justify-between items-baseline w-full">
+              <h3 class="text-base font-semibold text-[#0B1E3D] tracking-tight">
+                Sectionnel Dante
+              </h3>
+              <span class="text-sm font-medium text-gray-400">$6995</span>
+            </div>
+            <div class="flex gap-2 mt-2 gap-x-2 gap-y-2 items-center"></div>
+          </div>
+        </div>
+
+        <!-- Horizontal Promo Card (Replaces Tempa and Delano) -->
+        <div class="group md:col-span-2 lg:col-span-2 aspect-video overflow-hidden cursor-pointer col-span-2 bg-[#1F1F1F] w-full h-full rounded-[2rem] relative">
+          <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/a7a31154-d592-41fd-a522-7801ca0839d5_3840w.jpg" class="group-hover:scale-105 transition-transform duration-700 ease-out opacity-95 w-full h-full object-cover absolute top-0 right-0 bottom-0 left-0">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+
+          <div class="z-10 flex flex-col md:p-10 h-full p-6 relative justify-between items-start">
+            <h3 class="md:text-3xl -translate-y-4 text-lg text-white tracking-tight font-serif drop-shadow-md">Des coussins qui transforment l’espace</h3>
+            <div class="flex justify-start">
+              <span class="hover:bg-gray-100 transition-colors uppercase text-[10px] md:text-xs md:py-2 md:px-5 font-semibold text-[#1F1F1F] tracking-wider bg-white rounded-full pt-1.5 pr-4 pb-1.5 pl-4 shadow-sm">Magasiner les coussins</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 12 -->
+        <div class="group cursor-pointer">
+          <div class="aspect-square bg-[#F6F6F6] rounded-none overflow-hidden mb-5 relative">
+            <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/6823e302-9be8-4fef-8e2d-42dd174b8aaf_1600w.png" alt="Chair" class="group-hover:scale-105 transition-transform duration-700 ease-out w-full h-full object-cover">
+            <div class="absolute top-5 right-5">
+              <span class="bg-[#1A3C34] text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wider">
+                Nouveau
+              </span>
+            </div>
+          </div>
+          <div class="flex flex-col gap-1 px-1">
+            <div class="flex w-full items-baseline justify-between">
+              <h3 class="text-base font-semibold text-[#0B1E3D] tracking-tight">
+                Modulaire Lowell 2 sièges
+              </h3>
+              <span class="text-sm font-medium text-gray-400">$1770</span>
+            </div>
+            <div class="flex items-center gap-2 mt-2"></div>
+          </div>
+        </div>
+
+        <!-- Product 13 -->
+        <div class="group cursor-pointer">
+          <div class="aspect-square overflow-hidden bg-[#F6F6F6] rounded-none mb-5 relative">
+  <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4c5d68e4-630a-46ff-b0da-54fd6f066ec6_1600w.png" alt="Grey Chair" class="group-hover:scale-105 transition-transform duration-700 ease-out bg-center w-full h-full object-cover">
+  <div class="absolute top-5 right-5">
+    <span class="bg-[#C0562F] text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wider">
+      Solde
+    </span>
+  </div>
+</div>
+          <div class="flex flex-col gap-1 px-1">
+            <div class="flex justify-between items-baseline w-full">
+              <h3 class="text-base font-semibold text-[#0B1E3D] tracking-tight">
+                Modulaire Esther
+              </h3>
+              <div class="flex gap-2 text-sm font-medium">
+                <span class="text-[#C0562F]">$5485</span>
+                <span class="line-through text-gray-300">$7000</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 mt-2"></div>
+          </div>
+        </div>
+
+        <!-- Product 14 -->
+        <div class="group cursor-pointer">
+          <div class="aspect-square bg-[#F6F6F6] rounded-none overflow-hidden mb-5 relative">
+            <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/cc1ef5e2-ed27-46cf-8088-b078e5d0172c_1600w.png" alt="Sofa" class="group-hover:scale-105 transition-transform duration-700 ease-out w-full h-full object-cover">
+          </div>
+          <div class="flex flex-col gap-1 px-1">
+            <div class="flex w-full items-baseline justify-between">
+              <h3 class="text-base font-semibold text-[#0B1E3D] tracking-tight">
+                Modulaire Delano 4 sièges
+              </h3>
+              <span class="text-sm font-medium text-gray-400">$4895</span>
+            </div>
+            <div class="flex items-center gap-2 mt-2"></div>
+          </div>
+        </div>
+
+        <!-- Product 15 -->
+        <div class="group cursor-pointer">
+          <div class="aspect-square bg-[#F6F6F6] rounded-none overflow-hidden mb-5 relative">
+            <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/2df7fddb-3c94-4c58-a31d-a960921cc08f_1600w.png" alt="Chair" class="group-hover:scale-105 transition-transform duration-700 ease-out w-full h-full object-cover">
+          </div>
+          <div class="flex flex-col gap-1 px-1">
+            <div class="flex justify-between items-baseline w-full">
+              <h3 class="text-base font-semibold text-[#0B1E3D] tracking-tight">
+                Modulaire Solano
+              </h3>
+              <span class="text-sm font-medium text-gray-400">$5758</span>
+            </div>
+            <div class="flex items-center gap-2 mt-2"></div>
+          </div>
+        </div>
+
+        <!-- Product 16 -->
+        <div class="group cursor-pointer">
+          <div class="aspect-square bg-[#F6F6F6] rounded-none overflow-hidden mb-5 relative">
+            <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/29f2c277-00d2-4c85-9bc7-a82e24ee2738_1600w.png" alt="Sofa" class="group-hover:scale-105 transition-transform duration-700 ease-out w-full h-full object-cover">
+          </div>
+          <div class="flex flex-col gap-1 px-1">
+            <div class="flex justify-between items-baseline w-full">
+              <h3 class="text-base font-semibold text-[#0B1E3D] tracking-tight">
+                Modulaire Delano 4 sièges
+              </h3>
+              <span class="text-sm font-medium text-gray-400">$6731</span>
+            </div>
+            <div class="flex items-center gap-2 mt-2"></div>
+          </div>
+        </div>
+
+        <!-- Product 17 -->
+        <div class="group cursor-pointer">
+          <div class="aspect-square bg-[#F6F6F6] rounded-none overflow-hidden mb-5 relative">
+            <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/cd338872-4a15-4ae7-83d2-03c2288abe78_1600w.png" alt="Chair" class="group-hover:scale-105 transition-transform duration-700 ease-out w-full h-full object-cover">
+          </div>
+          <div class="flex flex-col gap-1 px-1">
+            <div class="flex justify-between items-baseline w-full">
+              <h3 class="text-base font-semibold text-[#0B1E3D] tracking-tight">
+                Canapé Tampa 2 sièges
+              </h3>
+              <span class="text-sm font-medium text-gray-400">$2996</span>
+            </div>
+            <div class="flex items-center gap-2 mt-2"></div>
+          </div>
+        </div>
+
+        <!-- Product 18 -->
+        <div class="group cursor-pointer">
+          <div class="aspect-square bg-[#F6F6F6] rounded-none overflow-hidden mb-5 relative">
+            <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/c0d2bcf6-b113-4468-b332-bb7f95c18917_1600w.png" alt="Sofa" class="group-hover:scale-105 transition-transform duration-700 ease-out w-full h-full object-cover">
+          </div>
+          <div class="flex flex-col gap-1 px-1">
+            <div class="flex w-full items-baseline justify-between">
+              <h3 class="text-base font-semibold text-[#0B1E3D] tracking-tight">
+                Modulaire Lowell 2 sièges
+              </h3>
+              <span class="text-sm font-medium text-gray-400">$1770</span>
+            </div>
+            <div class="flex items-center gap-2 mt-2"></div>
+          </div>
+        </div>
+
+        <div class="group cursor-pointer">
+          <div class="aspect-square bg-[#F6F6F6] rounded-none overflow-hidden mb-5 relative">
+            <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/5be8e4f2-ac80-4f4e-9a69-652f4bffc0ba_1600w.png" alt="Fauteuil" class="group-hover:scale-105 transition-transform duration-700 ease-out w-full h-full object-cover">
+          </div>
+          <div class="flex flex-col gap-1 px-1">
+            <div class="flex justify-between items-baseline w-full">
+              <h3 class="text-base font-semibold text-[#0B1E3D] tracking-tight">
+                Modulaire Maverick 2 sièges
+              </h3>
+              <span class="text-sm font-medium text-gray-400">$1450</span>
+            </div>
+            <div class="flex items-center gap-2 mt-2"></div>
+          </div>
+        </div>
+
+        <div class="group relative md:col-span-2 lg:col-span-2 aspect-video w-full h-full bg-[#1A3C34] rounded-[2rem] overflow-hidden cursor-pointer col-span-2">
+          <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/917d6f93-fb36-439a-8c48-884b67b35381_1600w.jpg" class="group-hover:scale-105 transition-transform duration-700 ease-out opacity-90 w-full h-full object-cover z-10 absolute top-0 right-0 bottom-0 left-0 scale-100">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+
+          <div class="flex flex-col md:p-10 bg-center z-10 w-full h-full bg-[url(https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/aa306b13-33c7-4d14-9c1c-c6cc640d68b3_3840w.jpg)] bg-cover pt-8 pr-8 pb-8 pl-8 relative items-start justify-between">
+  <h3 class="md:text-3xl leading-tight -translate-y-6 text-lg text-white tracking-tight font-serif max-w-sm drop-shadow-md">Pensé pour les vrais moments</h3>
+  <div class="flex justify-start">
+    <span class="hover:bg-gray-100 transition-colors uppercase text-[10px] md:text-xs md:px-5 -translate-x-4 font-semibold text-[#1A3C34] tracking-wider bg-white rounded-full pt-2 pr-4 pb-2 pl-4 shadow-sm translate-y-3">Découvrir le modulaire Austin</span>
+  </div>
+</div>
+        </div>
+      </div>
+
+      <!-- Reviews Section -->
+      <section class="mt-10">
+        <div class="text-center mb-12">
+          <h2 class="md:text-4xl text-3xl font-semibold text-[#1F1F1F] tracking-tight font-serif mb-3">
+            Nos clients nous aiment
+          </h2>
+          <p class="text-lg font-medium text-gray-500">
+            à partir de 18 avis
+          </p>
+        </div>
+
+        <div class="flex overflow-x-auto gap-6 pb-8 -mx-6 px-6 md:mx-0 md:px-0 scrollbar-hide snap-x">
+           <!-- Review Card 1 -->
+           <div class="snap-start flex-none w-[300px] md:w-[350px] border border-gray-200 rounded-xl p-5 flex flex-col items-center text-center bg-white shadow-sm">
+            <div class="w-full aspect-[4/3] rounded-lg overflow-hidden mb-5">
+              <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/0b24a935-6446-4d49-bacd-867f6080aa45_800w.jpg" alt="Customer Review 1" class="hover:scale-105 transition-transform duration-500 w-full h-full object-cover">
+            </div>
+            <div class="flex gap-1 mb-4 text-[#FBBF24]">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+            </div>
+            <p class="text-base text-gray-600 mb-6 leading-relaxed flex-grow">"Je l'ai depuis maintenant 4 ans, je l'hydrate 2 fois par année et il reste vraiment beau. On l'adore!"</p>
+            <p class="text-base font-semibold text-gray-900 mt-auto">Francois Nicolas F.</p>
+          </div>
+
+          <!-- Review Card 2 -->
+          <div class="snap-start flex-none w-[300px] md:w-[350px] border border-gray-200 rounded-xl p-5 flex flex-col items-center text-center bg-white shadow-sm">
+            <div class="w-full aspect-[4/3] rounded-lg overflow-hidden mb-5">
+              <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/e0af6796-d369-4cc5-9abf-d005d1ebe03c_800w.jpg" alt="Customer Review 2" class="hover:scale-105 transition-transform duration-500 w-full h-full object-cover">
+            </div>
+            <div class="flex gap-1 mb-4 text-[#FBBF24]">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+            </div>
+            <p class="text-base text-gray-600 mb-6 leading-relaxed flex-grow">"J'ai le modulaire Maverick chez moi depuis plusieurs années et je l'adore! Il ajoute une touche chaleureuse."</p>
+            <p class="text-base font-semibold text-gray-900 mt-auto">Cynthia F.</p>
+          </div>
+
+          <!-- Review Card 3 -->
+          <div class="snap-start flex-none w-[300px] md:w-[350px] border border-gray-200 rounded-xl p-5 flex flex-col items-center text-center bg-white shadow-sm">
+            <div class="w-full aspect-[4/3] rounded-lg overflow-hidden mb-5">
+              <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/91067631-01a8-472f-8ecc-a10067196245_800w.jpg" alt="Customer Review 3" class="hover:scale-105 transition-transform duration-500 w-full h-full object-cover">
+            </div>
+            <div class="flex gap-1 mb-4 text-[#FBBF24]">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+            </div>
+            <p class="text-base text-gray-600 mb-6 leading-relaxed flex-grow">"J'adore mon Delano. La qualité du tissu est impressionnante et il est encore plus confortable qu'en photo."</p>
+            <p class="text-base font-semibold text-gray-900 mt-auto">Annie-Kim C.</p>
+          </div>
+
+          <!-- Review Card 4 -->
+          <div class="snap-start flex-none w-[300px] md:w-[350px] border border-gray-200 rounded-xl p-5 flex flex-col items-center text-center bg-white shadow-sm">
+            <div class="w-full aspect-[4/3] rounded-lg overflow-hidden mb-5">
+              <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/2bb9dc28-818c-4aa1-9524-892175864688_800w.jpg" alt="Customer Review 4" class="hover:scale-105 transition-transform duration-500 w-full h-full object-cover">
+            </div>
+            <div class="flex gap-1 mb-4 text-[#FBBF24]">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+            </div>
+            <p class="text-base text-gray-600 mb-6 leading-relaxed flex-grow">"Je cherchais une table distinctive qui s'agencerait bien au style rustique de ma maison. Parfaite!"</p>
+            <p class="text-base font-semibold text-gray-900 mt-auto">Cynthia F.</p>
+          </div>
+
+          <!-- Review Card 5 -->
+          <div class="snap-start flex-none w-[300px] md:w-[350px] border border-gray-200 rounded-xl p-5 flex flex-col items-center text-center bg-white shadow-sm">
+            <div class="w-full aspect-[4/3] rounded-lg overflow-hidden mb-5">
+              <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/92a0414d-a123-45ab-ac4a-21833d6e1337_800w.jpg" alt="Customer Review 5" class="hover:scale-105 transition-transform duration-500 w-full h-full object-cover">
+            </div>
+            <div class="flex gap-1 mb-4 text-[#FBBF24]">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+            </div>
+            <p class="text-base text-gray-600 mb-6 leading-relaxed flex-grow">"J'ai eu un Maverick 3 morceaux pendant plusieurs années. Je l'aimais tellement que je l'ai racheté!"</p>
+            <p class="text-base font-semibold text-gray-900 mt-auto">Liliane N.</p>
+          </div>
+
+          <!-- Review Card 6 -->
+          <div class="snap-start flex-none w-[300px] md:w-[350px] border border-gray-200 rounded-xl p-5 flex flex-col items-center text-center bg-white shadow-sm">
+            <div class="w-full aspect-[4/3] rounded-lg overflow-hidden mb-5">
+              <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/f7985396-fbc0-4418-871e-72f960713a57_800w.jpg" alt="Customer Review 6" class="hover:scale-105 transition-transform duration-500 w-full h-full object-cover">
+            </div>
+            <div class="flex gap-1 mb-4 text-[#FBBF24]">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+            </div>
+            <p class="text-base text-gray-600 mb-6 leading-relaxed flex-grow">"D'un aspect peu ordinaire, j'étais un peu sceptique... mais une fois installée, je n'ai plus envie de me lever!"</p>
+            <p class="text-base font-semibold text-gray-900 mt-auto">Kristina L.</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-black bg-[#dfdbd1] pt-16 pr-6 pb-16 pl-6">
+      <div class="max-w-[1800px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 text-lg">
+        <div class="">
+          <span class="uppercase block text-xl font-semibold tracking-[0.25em] mb-6">
+            LUSINE
+          </span>
+          <p class="opacity-70 text-base leading-relaxed">
+            Le design moderne accessible à tous. Qualité durable et style
+            intemporel.
+          </p>
+        </div>
+        <div class="">
+          <h4 class="font-serif text-xl mb-4">Aide</h4>
+          <ul class="space-y-2 opacity-70 text-base">
+            <li class="">
+              <a href="#" class="hover:underline">Contactez-nous</a>
+            </li>
+            <li class=""><a href="#" class="hover:underline">Livraison</a></li>
+            <li><a href="#" class="hover:underline">Retours</a></li>
+          </ul>
+        </div>
+        <div class="">
+          <h4 class="font-serif text-xl mb-4">À propos</h4>
+          <ul class="space-y-2 opacity-70 text-base">
+            <li class="">
+              <a href="#" class="hover:underline">Notre histoire</a>
+            </li>
+            <li><a href="#" class="hover:underline">Carrières</a></li>
+            <li><a href="#" class="hover:underline">Durabilité</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-serif text-xl mb-4">Infolettre</h4>
+          <div class="flex gap-2 border-b border-black/30 pb-2">
+            <input type="email" placeholder="Votre courriel" class="bg-transparent border-none outline-none w-full placeholder-black/50">
+          </div>
+        </div>
+      </div>
+    </footer>
+  
+</body></html>
