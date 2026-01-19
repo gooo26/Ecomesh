@@ -1,0 +1,33 @@
+Luxury Watch Product Landing Page Template
+
+A high-end product landing page template featuring a 3D hero experience, specs, technology highlights, and ecommerce CTAs for premium watches.
+
+CHRONOS OBSIDIAN is a dark, futuristic product landing page template built for premium watches and wearables, combining a cinematic 3D hero with conversion-focused ecommerce sections.
+
+Included Sections
+Immersive 3D interactive hero with scroll-driven animations
+Specs and materials panel in glassmorphism style
+Technology highlight section with bold typography
+Feature grid, pricing, and add-to-cart CTA
+Sticky navigation and minimalist footer links
+Key Features
+Three.js + GSAP-powered 3D product showcase
+Dark, minimal, glass-panel aesthetic for luxury brands
+Clear PRE-ORDER / ADD TO CART purchase flows
+Responsive layout optimized for desktop and mobile
+Smooth scroll and micro-interactions that feel premium
+Primary Use Case: Perfect template for launching or showcasing a high-end watch, smartwatch, or advanced wearable with a focus on engineering, technology, and brand storytelling.
+
+
+Tags:
+
+Landing Page
+E-commerce
+Brand
+Technology
+Dark
+Futuristic
+Gradient
+Large Type
+Minimal
+3D
