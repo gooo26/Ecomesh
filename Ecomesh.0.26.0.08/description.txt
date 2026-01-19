@@ -1,0 +1,32 @@
+Furniture E-commerce Category Page Template
+
+
+A modern French-language e-commerce template for showcasing modular sofas, divans and chairs in a stylish grid with promos and reviews.
+
+LUSINE Furniture Category Page Template
+
+A refined, French-language e-commerce template for modular sofas, divans and chairs, featuring a promo-led grid, rich imagery and social proof.
+
+Key features
+Hero section with category title, subtitle and filter pills (type, color)
+Responsive product grid with prices, badges (Nouveau, Solde) and color variants
+Integrated promo banners (“Magasinez Delano”, cushions, Austin) in card and widescreen formats
+Customer reviews carousel with photos, 5-star ratings and quotes
+Branded header and footer with navigation, language selector, help, about and newsletter signup
+Use cases
+Furniture and interior brands launching a modular seating collection
+Design-focused online shops needing a category layout that blends commerce, brand storytelling and social proof.
+
+
+Tags:
+
+E-commerce
+Landing Page
+Brand
+Art & Design
+Clean
+Minimal
+Large Type
+Furniture
+Interior
+French
