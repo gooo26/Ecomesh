@@ -1,0 +1,465 @@
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hero Slider - Fashion Edition</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body {
+font-family: 'Inter', sans-serif;
+background-color: #000;
+}
+/* Custom Easing */
+.ease-out-expo {
+transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+/* Base Slide Styles */
+.slide {
+pointer-events: none;
+position: absolute;
+inset: 0;
+z-index: 0;
+transition: all 1000ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.slide.active {
+pointer-events: auto;
+z-index: 10;
+}
+/* --- Dynamic Transition Effects --- */
+/* Effect: Fade (Default) */
+body[data-effect="fade"] .slide {
+opacity: 0;
+}
+body[data-effect="fade"] .slide.active {
+opacity: 1;
+}
+/* Effect: Slide (Horizontal Movement) */
+body[data-effect="slide"] .slide {
+opacity: 0;
+transform: translateX(100px);
+}
+body[data-effect="slide"] .slide.active {
+opacity: 1;
+transform: translateX(0);
+}
+/* Effect: Scale (Zoom In) */
+body[data-effect="scale"] .slide {
+opacity: 0;
+transform: scale(0.95);
+}
+body[data-effect="scale"] .slide.active {
+opacity: 1;
+transform: scale(1);
+}
+/* Effect: Vertical (Slide Up) */
+body[data-effect="vertical"] .slide {
+opacity: 0;
+transform: translateY(100px);
+}
+body[data-effect="vertical"] .slide.active {
+opacity: 1;
+transform: translateY(0);
+}
+/* Background Scale Effect (Inner Image) */
+.slide-bg {
+position: absolute;
+inset: 0;
+transform: scale(1.1);
+transition: transform 8000ms ease-out;
+}
+.slide.active .slide-bg {
+transform: scale(1);
+}
+/* Text Stagger Animation */
+.slide-content > * {
+opacity: 0;
+transform: translateY(20px);
+transition: all 1000ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.slide.active .slide-content > *:nth-child(1) { transition-delay: 200ms; opacity: 1; transform: translateY(0); }
+.slide.active .slide-content > *:nth-child(2) { transition-delay: 350ms; opacity: 1; transform: translateY(0); }
+.slide.active .slide-content > *:nth-child(3) { transition-delay: 500ms; opacity: 1; transform: translateY(0); }
+/* Progress Bar Animation */
+@keyframes progress {
+0% { width: 0%; }
+100% { width: 100%; }
+}
+.progress-bar-fill {
+width: 0%;
+}
+.slide.active .progress-bar-fill {
+animation: progress 5000ms linear forwards;
+}
+/* Custom Dropdown Animation */
+.dropdown-menu {
+opacity: 0;
+transform: translateY(-10px) scale(0.95);
+pointer-events: none;
+transition: all 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.dropdown-menu.open {
+opacity: 1;
+transform: translateY(0) scale(1);
+pointer-events: auto;
+}
+</style></head>
+<body class="text-zinc-100 antialiased selection:bg-zinc-700 selection:text-white overflow-hidden" data-effect="fade">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-40 border-b border-white/5 bg-black/20 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2 cursor-pointer">
+                <div class="w-6 h-6 rounded bg-white flex items-center justify-center">
+                    <div class="w-2 h-2 bg-black rounded-full"></div>
+                </div>
+                <span class="font-medium tracking-tighter text-lg">KINETIC</span>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-300">
+                <a href="#" class="hover:text-white transition-colors">Collection</a>
+                <a href="#" class="hover:text-white transition-colors">Editorial</a>
+                <a href="#" class="hover:text-white transition-colors">Campaigns</a>
+                <a href="#" class="hover:text-white transition-colors">Stores</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="#" class="text-sm font-medium text-zinc-300 hover:text-white transition-colors hidden sm:block">Log in</a>
+                <a href="#" class="group relative px-4 py-1.5 rounded-full bg-white text-black text-sm font-medium transition-transform hover:scale-105 active:scale-95">
+                    <span>Shop Now</span>
+                    <div class="absolute inset-0 rounded-full ring-2 ring-white/20 group-hover:ring-white/40 transition-all"></div>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Floating Settings Panel -->
+    <div class="fixed top-24 right-6 z-50 w-64 bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl p-4 shadow-2xl ring-1 ring-white/5">
+        <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-semibold tracking-widest text-zinc-500 uppercase">Config</span>
+            <iconify-icon icon="lucide:settings-2" class="text-zinc-500" width="14"></iconify-icon>
+        </div>
+
+        <div class="space-y-4">
+            <!-- Custom Transition Dropdown -->
+            <div class="relative z-20">
+                <label class="text-xs text-zinc-400 font-medium mb-1.5 block">Transition Effect</label>
+                <button id="dropdown-trigger" class="w-full h-9 px-3 rounded-lg bg-white/5 border border-white/10 flex items-center justify-between text-sm text-zinc-200 hover:bg-white/10 hover:border-white/20 transition-all focus:outline-none focus:ring-2 focus:ring-white/20">
+                    <span id="current-effect-label">Fade</span>
+                    <iconify-icon icon="lucide:chevron-down" class="text-zinc-500" width="14"></iconify-icon>
+                </button>
+                
+                <!-- Dropdown Menu -->
+                <div id="dropdown-menu" class="dropdown-menu absolute top-full left-0 w-full mt-2 bg-[#111] border border-white/10 rounded-lg overflow-hidden shadow-xl p-1">
+                    <div class="effect-option cursor-pointer px-3 py-2 text-sm text-zinc-400 hover:text-white hover:bg-white/5 rounded-md flex items-center justify-between" onclick="setEffect('fade', 'Fade')">
+                        Fade <iconify-icon icon="lucide:check" class="check-icon text-white opacity-0" width="14"></iconify-icon>
+                    </div>
+                    <div class="effect-option cursor-pointer px-3 py-2 text-sm text-zinc-400 hover:text-white hover:bg-white/5 rounded-md flex items-center justify-between" onclick="setEffect('slide', 'Slide')">
+                        Slide <iconify-icon icon="lucide:check" class="check-icon text-white opacity-0" width="14"></iconify-icon>
+                    </div>
+                    <div class="effect-option cursor-pointer px-3 py-2 text-sm text-zinc-400 hover:text-white hover:bg-white/5 rounded-md flex items-center justify-between" onclick="setEffect('scale', 'Scale')">
+                        Scale <iconify-icon icon="lucide:check" class="check-icon text-white opacity-0" width="14"></iconify-icon>
+                    </div>
+                    <div class="effect-option cursor-pointer px-3 py-2 text-sm text-zinc-400 hover:text-white hover:bg-white/5 rounded-md flex items-center justify-between" onclick="setEffect('vertical', 'Vertical')">
+                        Vertical <iconify-icon icon="lucide:check" class="check-icon text-white opacity-0" width="14"></iconify-icon>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add Slide Action -->
+            <div>
+                <button onclick="addNewSlide()" class="group w-full h-9 rounded-lg bg-white text-black text-sm font-medium flex items-center justify-center gap-2 hover:bg-zinc-200 transition-colors active:scale-95">
+                    <iconify-icon icon="lucide:plus" width="14" stroke-width="2.5"></iconify-icon>
+                    Add Slide
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Slider Container -->
+    <main id="slider-container" class="relative h-screen w-full flex flex-col justify-center items-center bg-black">
+
+        <!-- Slide 1 -->
+        <div class="slide active">
+            <div class="slide-bg">
+                <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&amp;w=2574&amp;auto=format&amp;fit=crop" class="w-full h-full object-cover opacity-60">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/30"></div>
+            </div>
+            <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-25 brightness-100 contrast-150 mix-blend-overlay"></div>
+            
+            <div class="relative z-10 max-w-7xl mx-auto px-6 h-full flex flex-col justify-center items-center text-center slide-content">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-zinc-200 text-xs font-medium mb-6 backdrop-blur-md">
+                    <span class="relative flex h-2 w-2">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+                    </span>
+                    Winter Collection '24
+                </div>
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-medium tracking-tight text-white pb-2 drop-shadow-lg">
+                    Orchestrate <br>
+                    the incredible.
+                </h1>
+                <p class="mt-6 text-lg md:text-xl text-zinc-300 max-w-2xl leading-relaxed drop-shadow-md">
+                    Redefining modern aesthetics with precision tailoring and sustainable materials. The future of fashion is here.
+                </p>
+                <div class="mt-10 flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                    <button class="group h-12 px-6 rounded-full bg-white text-black font-medium text-sm flex items-center justify-center gap-2 hover:bg-zinc-200 transition-colors">
+                        View Lookbook
+                        <iconify-icon icon="lucide:arrow-right" width="16" stroke-width="2.5" class="transition-transform group-hover:translate-x-1"></iconify-icon>
+                    </button>
+                    <button class="h-12 px-6 rounded-full border border-white/20 bg-black/20 text-white font-medium text-sm hover:bg-black/40 transition-colors backdrop-blur-md">
+                        Our Story
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide">
+            <div class="slide-bg">
+                <img src="https://images.unsplash.com/photo-1492633423870-43d1cd2775eb?q=80&amp;w=2670&amp;auto=format&amp;fit=crop" class="w-full h-full object-cover opacity-60">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/30"></div>
+            </div>
+            <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-25 brightness-100 contrast-150 mix-blend-overlay"></div>
+            
+            <div class="relative z-10 max-w-7xl mx-auto px-6 h-full flex flex-col justify-center items-center text-center slide-content">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-zinc-200 text-xs font-medium mb-6 backdrop-blur-md">
+                   <iconify-icon icon="lucide:sparkles" width="12" stroke-width="2"></iconify-icon>
+                   New Arrivals
+                </div>
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-medium tracking-tight text-white pb-2 drop-shadow-lg">
+                    Global style, <br>
+                    delivered locally.
+                </h1>
+                <p class="mt-6 text-lg md:text-xl text-zinc-300 max-w-2xl leading-relaxed drop-shadow-md">
+                    Experience the texture of luxury. Designed in Milan, crafted for the world's most demanding wardrobes.
+                </p>
+                <div class="mt-10 flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                    <button class="group h-12 px-6 rounded-full bg-white text-black font-medium text-sm flex items-center justify-center gap-2 hover:bg-zinc-200 transition-colors">
+                        Shop Collection
+                        <iconify-icon icon="lucide:shopping-bag" width="16" stroke-width="2.5" class="transition-transform group-hover:-rotate-12"></iconify-icon>
+                    </button>
+                    <button class="h-12 px-6 rounded-full border border-white/20 bg-black/20 text-white font-medium text-sm hover:bg-black/40 transition-colors backdrop-blur-md">
+                        Find a Store
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide">
+            <div class="slide-bg">
+                <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&amp;w=2670&amp;auto=format&amp;fit=crop" class="w-full h-full object-cover opacity-60">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/30"></div>
+            </div>
+            <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-25 brightness-100 contrast-150 mix-blend-overlay"></div>
+            
+            <div class="relative z-10 max-w-7xl mx-auto px-6 h-full flex flex-col justify-center items-center text-center slide-content">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-zinc-200 text-xs font-medium mb-6 backdrop-blur-md">
+                   <iconify-icon icon="lucide:gem" width="12" stroke-width="2"></iconify-icon>
+                   Limited Edition
+                </div>
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-medium tracking-tight text-white pb-2 drop-shadow-lg">
+                    Beauty built <br>
+                    for the bold.
+                </h1>
+                <p class="mt-6 text-lg md:text-xl text-zinc-300 max-w-2xl leading-relaxed drop-shadow-md">
+                    Uncompromising quality and visionary design. Join the movement that is changing the face of modern couture.
+                </p>
+                <div class="mt-10 flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                    <button class="group h-12 px-6 rounded-full bg-white text-black font-medium text-sm flex items-center justify-center gap-2 hover:bg-zinc-200 transition-colors">
+                        Pre-order Now
+                        <iconify-icon icon="lucide:arrow-up-right" width="16" stroke-width="2.5" class="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></iconify-icon>
+                    </button>
+                    <button class="h-12 px-6 rounded-full border border-white/20 bg-black/20 text-white font-medium text-sm hover:bg-black/40 transition-colors backdrop-blur-md">
+                        Campaign
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="absolute bottom-12 left-0 w-full z-20">
+            <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+                
+                <!-- Slide Info / Pagination -->
+                <div class="flex gap-3" id="pagination-container">
+                    <!-- Dynamic dots -->
+                </div>
+
+                <!-- Navigation Arrows -->
+                <div class="flex gap-4">
+                    <button onclick="prevSlide()" class="w-10 h-10 rounded-full border border-white/10 bg-black/20 backdrop-blur-md text-zinc-300 flex items-center justify-center hover:bg-white hover:text-black hover:border-white transition-all active:scale-95">
+                        <iconify-icon icon="lucide:arrow-left" width="18"></iconify-icon>
+                    </button>
+                    <button onclick="nextSlide()" class="w-10 h-10 rounded-full border border-white/10 bg-black/20 backdrop-blur-md text-zinc-300 flex items-center justify-center hover:bg-white hover:text-black hover:border-white transition-all active:scale-95">
+                        <iconify-icon icon="lucide:arrow-right" width="18"></iconify-icon>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Gradient Overlay Bottom -->
+        <div class="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-black to-transparent pointer-events-none z-10"></div>
+
+    </main>
+
+    <script>
+        // State
+        let currentSlide = 0;
+        let slides = [];
+        let totalSlides = 0;
+        let slideInterval;
+        const intervalTime = 5000;
+        
+        // Setup initial pagination
+        function init() {
+            slides = document.querySelectorAll('.slide');
+            totalSlides = slides.length;
+            const paginationContainer = document.getElementById('pagination-container');
+            paginationContainer.innerHTML = '';
+            
+            for(let i=0; i<totalSlides; i++) {
+                const btn = document.createElement('button');
+                btn.onclick = () => goToSlide(i);
+                btn.className = 'group relative h-1 w-12 rounded-full bg-white/20 overflow-hidden transition-all hover:bg-white/40';
+                btn.innerHTML = `<div class="progress-bar-fill h-full bg-white rounded-full"></div>`;
+                paginationContainer.appendChild(btn);
+            }
+            updateSlides();
+            resetTimer();
+            updateCheckIcons('fade'); // Default check
+        }
+
+        function updateSlides() {
+            const progressBars = document.querySelectorAll('.progress-bar-fill');
+            
+            // Reset state
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+            progressBars.forEach(bar => {
+                bar.style.animation = 'none';
+                bar.offsetHeight; /* trigger reflow */
+                bar.style.width = '0%';
+            });
+
+            // Set Active
+            if(slides[currentSlide]) {
+                slides[currentSlide].classList.add('active');
+                
+                // Set progress bars for completed slides
+                for(let i=0; i<currentSlide; i++) {
+                    if(progressBars[i]) progressBars[i].style.width = '100%';
+                }
+                
+                // Animate current bar
+                if(progressBars[currentSlide]) {
+                    progressBars[currentSlide].style.animation = `progress ${intervalTime}ms linear forwards`;
+                }
+            }
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlides();
+            resetTimer();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlides();
+            resetTimer();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlides();
+            resetTimer();
+        }
+
+        function resetTimer() {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, intervalTime);
+        }
+
+        // --- Settings Panel Logic ---
+
+        // Dropdown Toggle
+        const dropdownBtn = document.getElementById('dropdown-trigger');
+        const dropdownMenu = document.getElementById('dropdown-menu');
+        
+        dropdownBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            dropdownMenu.classList.toggle('open');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', () => {
+            dropdownMenu.classList.remove('open');
+        });
+
+        // Set Effect
+        function setEffect(effect, label) {
+            document.body.setAttribute('data-effect', effect);
+            document.getElementById('current-effect-label').innerText = label;
+            updateCheckIcons(effect);
+        }
+
+        function updateCheckIcons(selectedEffect) {
+            const options = document.querySelectorAll('.effect-option');
+            options.forEach(opt => {
+                const icon = opt.querySelector('.check-icon');
+                if (opt.getAttribute('onclick').includes(selectedEffect)) {
+                    icon.classList.remove('opacity-0');
+                } else {
+                    icon.classList.add('opacity-0');
+                }
+            });
+        }
+
+        // Add Slide Functionality
+        const newImages = [
+            "https://images.unsplash.com/photo-1509631179647-b8d2175949e2?q=80&w=2576&auto=format&fit=crop",
+            "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=2574&auto=format&fit=crop",
+            "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=2864&auto=format&fit=crop"
+        ];
+
+        function addNewSlide() {
+            const container = document.getElementById('slider-container');
+            // Clone the first slide to keep structure
+            const template = slides[0].cloneNode(true);
+            
+            // Randomize content for the new slide
+            const randomImg = newImages[Math.floor(Math.random() * newImages.length)];
+            const img = template.querySelector('img');
+            img.src = randomImg;
+            
+            const title = template.querySelector('h1');
+            title.innerHTML = "Defined by <br/> the unexpected.";
+            
+            const badge = template.querySelector('.inline-flex');
+            badge.innerHTML = `<iconify-icon icon="lucide:zap" width="12" stroke-width="2"></iconify-icon> Flash Drop`;
+
+            // Reset classes
+            template.classList.remove('active');
+            
+            // Insert before controls (which are at the bottom of main)
+            const controls = document.querySelector('.absolute.bottom-12');
+            container.insertBefore(template, controls);
+            
+            // Re-init logic to pick up new slide
+            init();
+            
+            // Go to the new slide immediately
+            goToSlide(totalSlides - 1);
+        }
+
+        // Initialize
+        init();
+
+    </script>
+
+</body></html>
