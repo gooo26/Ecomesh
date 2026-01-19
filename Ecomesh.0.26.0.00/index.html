@@ -1,0 +1,688 @@
+<html lang="en" class="scroll-smooth"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CHRONOS OBSIDIAN | Precision Engineering</title>
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<!-- Three.js & GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<style>
+body {
+font-family: 'Inter', sans-serif;
+background-color: #030304;
+color: #ffffff;
+overflow-x: hidden;
+}
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+width: 6px;
+}
+::-webkit-scrollbar-track {
+background: #030304;
+}
+::-webkit-scrollbar-thumb {
+background: #333;
+border-radius: 3px;
+}
+#canvas-container {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100vh;
+z-index: 0;
+outline: none;
+pointer-events: auto; /* Allow dragging */
+}
+.glass-panel {
+background: rgba(255, 255, 255, 0.03);
+backdrop-filter: blur(16px);
+-webkit-backdrop-filter: blur(16px);
+border: 1px solid rgba(255, 255, 255, 0.06);
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+.text-gradient {
+background: linear-gradient(to bottom right, #ffffff, #a1a1aa);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+.cursor-grab-custom {
+cursor: grab;
+}
+.cursor-grab-custom:active {
+cursor: grabbing;
+}
+/* Subtle grid background for tech feel */
+.bg-grid {
+background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+background-size: 100px 100px;
+}
+/* Custom Toggle Switch Style */
+.toggle-checkbox:checked {
+right: 0;
+border-color: #fff;
+}
+.toggle-checkbox:checked + .toggle-label {
+background-color: #fff;
+}
+</style></head>
+<body class="antialiased selection:bg-white/20 selection:text-white bg-grid">
+
+    <!-- 3D Background -->
+    <div id="canvas-container" class="cursor-grab-custom"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-50 px-6 py-6 flex justify-between items-center mix-blend-difference">
+        <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center">
+                <div class="w-1.5 h-1.5 bg-white rounded-full"></div>
+            </div>
+            <span class="text-sm font-medium tracking-tight text-white/90">CHRONOS</span>
+        </div>
+        
+        <div class="hidden md:flex items-center gap-8 text-xs font-medium text-zinc-400 tracking-wide">
+            <a href="#overview" class="hover:text-white transition-colors">OVERVIEW</a>
+            <a href="#specs" class="hover:text-white transition-colors">SPECS</a>
+            <a href="#technology" class="hover:text-white transition-colors">TECHNOLOGY</a>
+        </div>
+
+        <button class="group flex items-center gap-2 bg-white text-black px-4 py-2 rounded text-xs font-medium hover:bg-zinc-200 transition-all duration-300">
+            <span>PRE-ORDER</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5"></i>
+        </button>
+    </nav>
+
+    <!-- Overlay Content -->
+    <main class="relative z-10 w-full">
+
+        <!-- Section 1: Hero -->
+        <section id="overview" class="h-screen w-full flex flex-col justify-center items-start px-6 md:px-24 pointer-events-none">
+            <div class="max-w-2xl space-y-8">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/5 bg-white/5 backdrop-blur-sm">
+                    <span class="w-1.5 h-1.5 rounded-full bg-indigo-500 shadow-[0_0_10px_rgba(99,102,241,0.5)]"></span>
+                    <span class="text-[10px] font-medium text-zinc-400 uppercase tracking-widest">Series 01 Limited</span>
+                </div>
+                
+                <h1 class="text-7xl md:text-9xl font-medium tracking-tighter leading-[0.9] text-white">
+                    TIME<br>
+                    <span class="text-zinc-600">REDEFINED.</span>
+                </h1>
+                
+                <p class="text-base md:text-lg text-zinc-400 max-w-sm font-light leading-relaxed tracking-tight">
+                    Aerospace-grade titanium chassis meets an always-on retinal display. The future of timekeeping is here.
+                </p>
+
+                <div class="pt-8 flex items-center gap-6 pointer-events-auto">
+                    <div class="flex items-center gap-2 text-zinc-500 text-xs tracking-wide">
+                        <i data-lucide="rotate-3d" class="w-4 h-4"></i>
+                        <span>INTERACT</span>
+                    </div>
+                    <div class="h-px w-8 bg-zinc-800"></div>
+                    <div class="flex items-center gap-2 text-zinc-500 text-xs tracking-wide">
+                        <i data-lucide="mouse-pointer-click" class="w-4 h-4"></i>
+                        <span>SCROLL</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Material & Specs -->
+        <section id="specs" class="min-h-screen w-full flex items-center justify-end px-6 md:px-24 py-24 pointer-events-none">
+            <div class="w-full max-w-sm space-y-6 glass-panel p-8 rounded-xl pointer-events-auto opacity-0 translate-y-10" id="specs-card">
+                <div class="flex items-center justify-between pb-4 border-b border-white/5">
+                    <h2 class="text-2xl font-medium tracking-tight text-white">Composition</h2>
+                    <span class="text-xs text-zinc-500 font-mono">MAT-V1.0</span>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="group cursor-default">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="text-sm text-zinc-200 font-medium">Case</span>
+                            <i data-lucide="shield" class="w-4 h-4 text-zinc-500 group-hover:text-white transition-colors"></i>
+                        </div>
+                        <p class="text-zinc-500 text-sm leading-relaxed">Grade 5 Titanium alloy with diamond-like carbon (DLC) coating.</p>
+                    </div>
+
+                    <div class="group cursor-default">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="text-sm text-zinc-200 font-medium">Display</span>
+                            <i data-lucide="layers" class="w-4 h-4 text-zinc-500 group-hover:text-white transition-colors"></i>
+                        </div>
+                        <p class="text-zinc-500 text-sm leading-relaxed">Sapphire crystal dome. 2000 nits peak brightness OLED.</p>
+                    </div>
+
+                    <div class="group cursor-default">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="text-sm text-zinc-200 font-medium">Strap</span>
+                            <i data-lucide="activity" class="w-4 h-4 text-zinc-500 group-hover:text-white transition-colors"></i>
+                        </div>
+                        <p class="text-zinc-500 text-sm leading-relaxed">High-performance fluoroelastomer with titanium buckle geometry.</p>
+                    </div>
+                </div>
+                
+                <div class="pt-4 mt-4 border-t border-white/5 flex justify-between items-center">
+                    <span class="text-xs text-zinc-500">Weight: 42g</span>
+                    <span class="text-xs text-zinc-500">Thickness: 9mm</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Technology -->
+        <section id="technology" class="h-screen w-full flex flex-col items-center justify-center text-center px-6 pointer-events-none">
+            <div class="relative z-20 flex flex-col items-center gap-6">
+                <div class="inline-flex items-center gap-2 border border-zinc-800 bg-black/80 backdrop-blur-md px-3 py-1 rounded-full">
+                    <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                    <span class="text-[10px] font-medium tracking-widest text-zinc-400">HAPTIC ENGINE V2</span>
+                </div>
+                
+                <div class="space-y-2">
+                    <h2 class="text-5xl md:text-8xl font-medium tracking-tighter text-white">ZERO LATENCY</h2>
+                    <h3 class="text-5xl md:text-8xl font-medium tracking-tighter text-zinc-800">FEEDBACK.</h3>
+                </div>
+                
+                <p class="mt-4 text-lg text-zinc-500 max-w-lg mx-auto leading-relaxed tracking-tight">
+                    Feel time pass with microscopic vibrations. A seamless connection between your digital life and physical reality.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 4: Features & Buy -->
+        <section id="features" class="min-h-screen w-full bg-[#030304] flex flex-col items-center justify-center py-32 px-6 border-t border-white/5 relative">
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl w-full mb-32 z-10">
+                <!-- Feature 1 -->
+                <div class="glass-panel p-6 rounded-lg flex flex-col justify-between h-48 hover:bg-white/5 transition-colors group">
+                    <div class="w-8 h-8 rounded bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-colors">
+                        <i data-lucide="droplets" class="w-4 h-4 text-white"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-medium text-white mb-1">10 ATM Water Resistance</h4>
+                        <p class="text-xs text-zinc-500 leading-relaxed">Engineered for deep diving and high-impact water sports.</p>
+                    </div>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="glass-panel p-6 rounded-lg flex flex-col justify-between h-48 hover:bg-white/5 transition-colors group">
+                    <div class="w-8 h-8 rounded bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-colors">
+                        <i data-lucide="battery-charging" class="w-4 h-4 text-white"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-medium text-white mb-1">14-Day Battery Life</h4>
+                        <p class="text-xs text-zinc-500 leading-relaxed">Low-power co-processor keeps the display active without drainage.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="glass-panel p-6 rounded-lg flex flex-col justify-between h-48 hover:bg-white/5 transition-colors group">
+                    <div class="w-8 h-8 rounded bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-colors">
+                        <i data-lucide="satellite" class="w-4 h-4 text-white"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-medium text-white mb-1">Dual-Band GPS</h4>
+                        <p class="text-xs text-zinc-500 leading-relaxed">Pinpoint accuracy in urban canyons and dense forests.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pricing / CTA -->
+            <div class="flex flex-col items-center gap-8 z-10 relative">
+                <div class="text-center">
+                    <h2 class="text-4xl font-medium tracking-tight text-white mb-2">The Collection</h2>
+                    <p class="text-zinc-500 text-sm">Select your configuration.</p>
+                </div>
+
+                <!-- Custom Radio Select -->
+                <div class="flex gap-4 p-1 bg-white/5 rounded-lg backdrop-blur-sm">
+                    <button class="px-6 py-2 rounded bg-white text-black text-xs font-medium shadow-sm">Obsidian</button>
+                    <button class="px-6 py-2 rounded text-zinc-400 hover:text-white text-xs font-medium transition-colors">Silver</button>
+                    <button class="px-6 py-2 rounded text-zinc-400 hover:text-white text-xs font-medium transition-colors">Gold</button>
+                </div>
+                
+                <div class="h-px w-24 bg-zinc-800 my-2"></div>
+
+                <div class="text-center space-y-6">
+                    <div class="flex items-baseline justify-center gap-1">
+                        <span class="text-lg text-zinc-500">$</span>
+                        <span class="text-5xl font-semibold tracking-tighter text-white">899</span>
+                    </div>
+
+                    <button class="relative overflow-hidden bg-white text-black pl-8 pr-6 py-3 rounded-full text-sm font-medium tracking-wide transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] flex items-center gap-4 group">
+                        <span>ADD TO CART</span>
+                        <div class="w-5 h-5 bg-black text-white rounded-full flex items-center justify-center group-hover:translate-x-1 transition-transform">
+                            <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                        </div>
+                    </button>
+                    <p class="text-[10px] text-zinc-600 uppercase tracking-widest">Ships Winter 2024</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="w-full border-t border-white/5 py-12 px-6 flex flex-col md:flex-row justify-between items-center text-zinc-600 text-xs font-medium tracking-wide">
+            <div class="flex items-center gap-2 mb-4 md:mb-0">
+                <div class="w-4 h-4 rounded-full border border-zinc-700"></div>
+                <span>CHRONOS INC.</span>
+            </div>
+            <div class="flex gap-8">
+                <a href="#" class="hover:text-white transition-colors">Warranty</a>
+                <a href="#" class="hover:text-white transition-colors">Support</a>
+                <a href="#" class="hover:text-white transition-colors">Legal</a>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // --------------------------------------------------------
+        // THREE.JS SETUP
+        // --------------------------------------------------------
+        
+        const container = document.getElementById('canvas-container');
+        const scene = new THREE.Scene();
+        // Deep void background
+        scene.fog = new THREE.FogExp2(0x030304, 0.03);
+
+        const camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 0.1, 100);
+        camera.position.set(0, 0, 10);
+
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.toneMapping = THREE.ACESFilmicToneMapping;
+        renderer.outputEncoding = THREE.sRGBEncoding;
+        container.appendChild(renderer.domElement);
+
+        // --------------------------------------------------------
+        // LIGHTING
+        // --------------------------------------------------------
+        
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.2);
+        scene.add(ambientLight);
+
+        // Key Light
+        const keyLight = new THREE.SpotLight(0xffffff, 1.5);
+        keyLight.position.set(5, 5, 10);
+        keyLight.angle = 0.5;
+        keyLight.penumbra = 1;
+        scene.add(keyLight);
+
+        // Cool Rim Light
+        const rimLightBlue = new THREE.SpotLight(0x6366f1, 3);
+        rimLightBlue.position.set(-5, 0, -5);
+        rimLightBlue.lookAt(0,0,0);
+        scene.add(rimLightBlue);
+
+        // Warm Fill
+        const fillLight = new THREE.PointLight(0xffffff, 0.5);
+        fillLight.position.set(5, -5, 5);
+        scene.add(fillLight);
+
+        // --------------------------------------------------------
+        // TEXTURE GENERATION (Procedural Watch Face)
+        // --------------------------------------------------------
+        
+        function createWatchFaceTexture() {
+            const canvas = document.createElement('canvas');
+            canvas.width = 1024;
+            canvas.height = 1024;
+            const ctx = canvas.getContext('2d');
+
+            // Black Background
+            ctx.fillStyle = '#000000';
+            ctx.fillRect(0, 0, 1024, 1024);
+
+            // Tick Marks
+            ctx.translate(512, 512);
+            ctx.strokeStyle = '#333';
+            ctx.lineWidth = 4;
+            for(let i=0; i<60; i++) {
+                ctx.rotate(Math.PI / 30);
+                ctx.beginPath();
+                ctx.moveTo(0, 420);
+                ctx.lineTo(0, 480);
+                ctx.stroke();
+            }
+
+            // Hour Marks
+            ctx.strokeStyle = '#fff';
+            ctx.lineWidth = 8;
+            for(let i=0; i<12; i++) {
+                ctx.rotate(Math.PI / 6);
+                ctx.beginPath();
+                ctx.moveTo(0, 400);
+                ctx.lineTo(0, 480);
+                ctx.stroke();
+            }
+
+            // Reset Rotation for Text
+            ctx.setTransform(1, 0, 0, 1, 0, 0);
+
+            // Logo
+            ctx.fillStyle = '#ffffff';
+            ctx.font = '500 30px Inter, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.letterSpacing = '10px';
+            ctx.fillText('CHRONOS', 512, 300);
+            
+            ctx.fillStyle = '#666';
+            ctx.font = '400 20px Inter, sans-serif';
+            ctx.fillText('AUTOMATIC', 512, 750);
+
+            // Sub-dials (Abstract)
+            ctx.strokeStyle = '#222';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.arc(350, 512, 80, 0, Math.PI * 2);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.arc(674, 512, 80, 0, Math.PI * 2);
+            ctx.stroke();
+
+            // Accent
+            ctx.fillStyle = '#6366f1'; // Indigo accent
+            ctx.beginPath();
+            ctx.arc(674, 512, 5, 0, Math.PI*2);
+            ctx.fill();
+
+            const texture = new THREE.CanvasTexture(canvas);
+            texture.anisotropy = 16;
+            return texture;
+        }
+
+        // --------------------------------------------------------
+        // MODEL CREATION (Procedural Watch)
+        // --------------------------------------------------------
+
+        const watchGroup = new THREE.Group();
+        scene.add(watchGroup);
+
+        // 1. Main Case (Cylinder)
+        const caseGeo = new THREE.CylinderGeometry(2.1, 2.1, 0.4, 64);
+        const metalMat = new THREE.MeshStandardMaterial({ 
+            color: 0x111111,
+            roughness: 0.2,
+            metalness: 0.9,
+        });
+        const caseMesh = new THREE.Mesh(caseGeo, metalMat);
+        caseMesh.rotation.x = Math.PI / 2;
+        watchGroup.add(caseMesh);
+
+        // 2. Bezel (Torus)
+        const bezelGeo = new THREE.TorusGeometry(2.1, 0.1, 16, 100);
+        const bezelMat = new THREE.MeshStandardMaterial({ color: 0x222222, roughness: 0.1, metalness: 0.8 });
+        const bezel = new THREE.Mesh(bezelGeo, bezelMat);
+        watchGroup.add(bezel);
+
+        // 3. Glass / Face
+        const faceGeo = new THREE.CircleGeometry(2.0, 64);
+        const faceMat = new THREE.MeshStandardMaterial({ 
+            map: createWatchFaceTexture(),
+            roughness: 0.0,
+            metalness: 0.0,
+            emissive: 0xffffff,
+            emissiveIntensity: 0.1
+        });
+        const face = new THREE.Mesh(faceGeo, faceMat);
+        face.position.z = 0.21;
+        watchGroup.add(face);
+
+        // 4. Hands (Simple Boxes)
+        const handGroup = new THREE.Group();
+        watchGroup.add(handGroup);
+        handGroup.position.z = 0.25;
+
+        // Hour Hand
+        const hHandGeo = new THREE.BoxGeometry(0.12, 1.2, 0.02);
+        hHandGeo.translate(0, 0.4, 0); // Pivot adjustment
+        const hHandMat = new THREE.MeshStandardMaterial({ color: 0xffffff });
+        const hHand = new THREE.Mesh(hHandGeo, hHandMat);
+        hHand.rotation.z = -1;
+        handGroup.add(hHand);
+
+        // Minute Hand
+        const mHandGeo = new THREE.BoxGeometry(0.08, 1.8, 0.02);
+        mHandGeo.translate(0, 0.6, 0);
+        const mHandMat = new THREE.MeshStandardMaterial({ color: 0xcccccc });
+        const mHand = new THREE.Mesh(mHandGeo, mHandMat);
+        mHand.rotation.z = 2.5;
+        handGroup.add(mHand);
+
+        // Second Hand (Indigo)
+        const sHandGeo = new THREE.BoxGeometry(0.03, 1.9, 0.02);
+        sHandGeo.translate(0, 0.5, 0);
+        const sHandMat = new THREE.MeshBasicMaterial({ color: 0x6366f1 });
+        const sHand = new THREE.Mesh(sHandGeo, sHandMat);
+        handGroup.add(sHand);
+        
+        // 5. Straps (Simplified with Box/Cylinders)
+        const strapMat = new THREE.MeshStandardMaterial({ 
+            color: 0x111111, 
+            roughness: 0.8, 
+            metalness: 0.1 
+        });
+        
+        // Top Strap
+        const topStrap = new THREE.Mesh(new THREE.BoxGeometry(1.6, 2, 0.3), strapMat);
+        topStrap.position.y = 2.2;
+        topStrap.position.z = -0.1;
+        watchGroup.add(topStrap);
+
+        // Bottom Strap
+        const botStrap = new THREE.Mesh(new THREE.BoxGeometry(1.6, 2, 0.3), strapMat);
+        botStrap.position.y = -2.2;
+        botStrap.position.z = -0.1;
+        watchGroup.add(botStrap);
+
+        // Lugs (Visual connectors)
+        const lugGeo = new THREE.BoxGeometry(0.4, 0.6, 0.4);
+        const lug1 = new THREE.Mesh(lugGeo, metalMat); lug1.position.set(0.9, 2, 0); watchGroup.add(lug1);
+        const lug2 = new THREE.Mesh(lugGeo, metalMat); lug2.position.set(-0.9, 2, 0); watchGroup.add(lug2);
+        const lug3 = new THREE.Mesh(lugGeo, metalMat); lug3.position.set(0.9, -2, 0); watchGroup.add(lug3);
+        const lug4 = new THREE.Mesh(lugGeo, metalMat); lug4.position.set(-0.9, -2, 0); watchGroup.add(lug4);
+
+        // Crown
+        const crownGeo = new THREE.CylinderGeometry(0.2, 0.2, 0.4, 16);
+        const crown = new THREE.Mesh(crownGeo, metalMat);
+        crown.rotation.z = Math.PI / 2;
+        crown.position.set(2.2, 0, 0);
+        watchGroup.add(crown);
+
+
+        // Particles (Data Dust)
+        const particlesGeo = new THREE.BufferGeometry();
+        const pCount = 300;
+        const pPos = new Float32Array(pCount * 3);
+        for(let i=0; i<pCount*3; i++) {
+            pPos[i] = (Math.random() - 0.5) * 15;
+        }
+        particlesGeo.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
+        const pMat = new THREE.PointsMaterial({
+            color: 0x6366f1,
+            size: 0.03,
+            transparent: true,
+            opacity: 0
+        });
+        const particles = new THREE.Points(particlesGeo, pMat);
+        scene.add(particles);
+
+        // --------------------------------------------------------
+        // INTERACTIVITY
+        // --------------------------------------------------------
+        
+        let isDragging = false;
+        let previousMousePosition = { x: 0, y: 0 };
+        let rotationVelocity = { x: 0, y: 0 };
+
+        container.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            previousMousePosition = { x: e.clientX, y: e.clientY };
+            container.style.cursor = 'grabbing';
+        });
+
+        window.addEventListener('mouseup', () => { isDragging = false; container.style.cursor = 'grab'; });
+        
+        window.addEventListener('mousemove', (e) => {
+            if (isDragging) {
+                const deltaMove = {
+                    x: e.clientX - previousMousePosition.x,
+                    y: e.clientY - previousMousePosition.y
+                };
+                watchGroup.rotation.y += deltaMove.x * 0.005;
+                watchGroup.rotation.x += deltaMove.y * 0.005;
+                rotationVelocity = { x: deltaMove.x * 0.001, y: deltaMove.y * 0.001 };
+                previousMousePosition = { x: e.clientX, y: e.clientY };
+            }
+        });
+
+        // --------------------------------------------------------
+        // GSAP ANIMATIONS
+        // --------------------------------------------------------
+        
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Initial State
+        watchGroup.rotation.x = 0; // Flat facing camera
+        watchGroup.rotation.y = 0;
+        watchGroup.scale.set(1.2, 1.2, 1.2);
+
+        // 1. Move to "Overview" (Rotate slightly)
+        gsap.to(watchGroup.rotation, {
+            y: 0.5,
+            x: 0.2,
+            scrollTrigger: {
+                trigger: "#overview",
+                start: "top top",
+                end: "bottom center",
+                scrub: 2
+            }
+        });
+
+        // 2. Move to "Specs" (Move Left, Rotate to Side profile)
+        const tlSpecs = gsap.timeline({
+            scrollTrigger: {
+                trigger: "#specs",
+                start: "top bottom",
+                end: "center center",
+                scrub: 1.5
+            }
+        });
+        
+        tlSpecs.to(watchGroup.position, { x: -3.5, z: 2 })
+               .to(watchGroup.rotation, { y: 1.2, x: 0.5 }, "<");
+
+        // Reveal Card
+        gsap.to("#specs-card", {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            scrollTrigger: {
+                trigger: "#specs",
+                start: "top 60%",
+                toggleActions: "play none none reverse"
+            }
+        });
+
+        // 3. Move to "Technology" (Center, Zoom, Explosion of particles)
+        const tlTech = gsap.timeline({
+            scrollTrigger: {
+                trigger: "#technology",
+                start: "top bottom",
+                end: "center center",
+                scrub: 1
+            }
+        });
+
+        tlTech.to(watchGroup.position, { x: 0, y: 0, z: 5.5 }) // Macro Zoom
+              .to(watchGroup.rotation, { x: 0, y: 0, z: 0.2 }, "<") // Face on
+              .to(pMat, { opacity: 0.6 }, "<"); // Show data dust
+
+        // 4. Move to "Features" (Float up and away)
+        gsap.to(watchGroup.position, {
+            y: 3,
+            z: -5,
+            scrollTrigger: {
+                trigger: "#features",
+                start: "top bottom",
+                end: "center center",
+                scrub: 1
+            }
+        });
+
+        gsap.to(pMat, {
+            opacity: 0,
+            scrollTrigger: {
+                trigger: "#features",
+                start: "top bottom",
+                end: "20% center",
+                scrub: true
+            }
+        });
+
+        // --------------------------------------------------------
+        // RENDER LOOP
+        // --------------------------------------------------------
+        
+        const clock = new THREE.Clock();
+
+        function animate() {
+            requestAnimationFrame(animate);
+            const time = clock.getElapsedTime();
+
+            // Hand movement
+            sHand.rotation.z = -time; // Seconds ticking
+            mHand.rotation.z = -time / 60; 
+
+            // Idle Animation
+            if (!isDragging) {
+                rotationVelocity.x *= 0.95;
+                rotationVelocity.y *= 0.95;
+                watchGroup.rotation.y += rotationVelocity.x;
+                watchGroup.rotation.x += rotationVelocity.y;
+
+                // Subtle float
+                watchGroup.position.y += Math.sin(time) * 0.001;
+            }
+
+            // Particle drift
+            particles.rotation.y = time * 0.05;
+
+            renderer.render(scene, camera);
+        }
+
+        animate();
+
+        // --------------------------------------------------------
+        // RESPONSIVE RESIZE
+        // --------------------------------------------------------
+        
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            
+            if(window.innerWidth < 768) {
+                watchGroup.scale.set(0.8, 0.8, 0.8);
+            } else {
+                watchGroup.scale.set(1.2, 1.2, 1.2);
+            }
+        });
+
+        if(window.innerWidth < 768) {
+            watchGroup.scale.set(0.8, 0.8, 0.8);
+        }
+
+    </script>
+
+</body></html>
+
