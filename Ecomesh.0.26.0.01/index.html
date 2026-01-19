@@ -1,0 +1,1539 @@
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nova — Think clearly. Capture instantly.</title>
+<meta name="description" content="Nova helps you capture ideas, link them effortlessly, and recall anything in milliseconds.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style id="aura-editor-visibility-style">
+.invisible { visibility: hidden !important; }
+</style>
+<style class="">
+/*
+Sequence animation intro. Usage:
+1) Insert this code in the <head>
+2) Add to Tailwind Classes: [animation:fadeSlideIn_1s_ease-out_0.1s_both]
+*/
+@keyframes fadeSlideIn {
+0% {
+opacity: 0;
+transform: translateY(30px);
+filter: blur(8px);
+}
+100% {
+opacity: 1;
+transform: translateY(0);
+filter: blur(0px);
+}
+}
+</style>
+<script>
+/*
+Sequence animation on scroll when visible. Requires Animation Keyframe. Usage:
+1) Insert this code in the <head> along with the Animation Keyframe code.
+2) Add to Tailwind Classes: [animation:fadeSlideIn_1s_ease-out_0.1s_both] animate-on-scroll
+*/
+(function () {
+// Inject CSS for paused/running states
+const style = document.createElement("style");
+style.textContent = `
+/* Default: paused */
+.animate-on-scroll { animation-play-state: paused !important; }
+/* Activated by JS */
+.animate-on-scroll.animate { animation-play-state: running !important; }
+`;
+document.head.appendChild(style);
+const once = true;
+if (!window.__inViewIO) {
+window.__inViewIO = new IntersectionObserver((entries) => {
+entries.forEach((entry) => {
+if (entry.isIntersecting) {
+entry.target.classList.add("animate");
+if (once) window.__inViewIO.unobserve(entry.target);
+}
+});
+}, { threshold: 0.2, rootMargin: "0px 0px -10% 0px" });
+}
+window.initInViewAnimations = function (selector = ".animate-on-scroll") {
+document.querySelectorAll(selector).forEach((el) => {
+window.__inViewIO.observe(el); // observing twice is a no-op
+});
+};
+document.addEventListener("DOMContentLoaded", () => initInViewAnimations());
+})();
+</script>
+<link id="all-fonts-link-font-geist" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist">.font-geist { font-family: 'Geist', sans-serif !important; }</style><link id="all-fonts-link-font-roboto" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-roboto">.font-roboto { font-family: 'Roboto', sans-serif !important; }</style><link id="all-fonts-link-font-montserrat" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-montserrat">.font-montserrat { font-family: 'Montserrat', sans-serif !important; }</style><link id="all-fonts-link-font-poppins" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-poppins">.font-poppins { font-family: 'Poppins', sans-serif !important; }</style><link id="all-fonts-link-font-playfair" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&amp;display=swap"><style id="all-fonts-style-font-playfair">.font-playfair { font-family: 'Playfair Display', serif !important; }</style><link id="all-fonts-link-font-instrument-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-instrument-serif">.font-instrument-serif { font-family: 'Instrument Serif', serif !important; }</style><link id="all-fonts-link-font-merriweather" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&amp;display=swap"><style id="all-fonts-style-font-merriweather">.font-merriweather { font-family: 'Merriweather', serif !important; }</style><link id="all-fonts-link-font-bricolage" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-bricolage">.font-bricolage { font-family: 'Bricolage Grotesque', sans-serif !important; }</style><link id="all-fonts-link-font-jakarta" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-jakarta">.font-jakarta { font-family: 'Plus Jakarta Sans', sans-serif !important; }</style><link id="all-fonts-link-font-manrope" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-manrope">.font-manrope { font-family: 'Manrope', sans-serif !important; }</style><link id="all-fonts-link-font-space-grotesk" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-space-grotesk">.font-space-grotesk { font-family: 'Space Grotesk', sans-serif !important; }</style><link id="all-fonts-link-font-work-sans" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-work-sans">.font-work-sans { font-family: 'Work Sans', sans-serif !important; }</style><link id="all-fonts-link-font-pt-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&amp;display=swap"><style id="all-fonts-style-font-pt-serif">.font-pt-serif { font-family: 'PT Serif', serif !important; }</style><link id="all-fonts-link-font-geist-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist-mono">.font-geist-mono { font-family: 'Geist Mono', monospace !important; }</style><link id="all-fonts-link-font-space-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;display=swap"><style id="all-fonts-style-font-space-mono">.font-space-mono { font-family: 'Space Mono', monospace !important; }</style><link id="all-fonts-link-font-quicksand" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-quicksand">.font-quicksand { font-family: 'Quicksand', sans-serif !important; }</style><link id="all-fonts-link-font-nunito" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-nunito">.font-nunito { font-family: 'Nunito', sans-serif !important; }</style></head>
+  <body class="antialiased xl:bg-[#000000] text-zinc-100" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial;">
+
+<!-- Background (component) added by Aura -->
+<div class="aura-background-component top-0 w-full h-screen -z-10 fixed saturate-50 brightness-75"><div data-us-project="hk4GkXoEfSX9qZozoFL6" class="absolute w-full h-full left-0 top-0 -z-10"></div>
+<script type="text/javascript" class="">
+  !function(){if(!window.UnicornStudio){window.UnicornStudio={isInitialized:!1};var i=document.createElement("script");i.src="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.31/dist/unicornStudio.umd.js",i.onload=function(){window.UnicornStudio.isInitialized||(UnicornStudio.init(),window.UnicornStudio.isInitialized=!0)},(document.head || document.body).appendChild(i)}}();
+</script></div>
+
+    <!-- Nav -->
+    <header class="z-50 sticky border-b relative top-0 backdrop-blur-xl" style="">
+      <div class="fixed z-50 xl:bg-[#000000] xl:pt-0 xl:pb-0 bg-[#000000] border-[#ffffff]/10 border-b pt-0 pr-6 pb-0 pl-6 top-0 right-0 left-0">
+  <header class="[animation:fadeSlideIn_1s_ease-out_0.1s_both] w-full relative">
+    <nav class="flex max-w-6xl mr-auto ml-auto pt-5 pr-6 pb-5 pl-6 items-center justify-between">
+      <a href="#" class="inline-flex items-center justify-center bg-center mix-blend-screen w-[100px] h-[40px] bg-[url(https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/b935a094-dbd3-4857-a41b-50e73466a4ab_800w.png)] bg-cover rounded invert-0"></a>
+      <div class="hidden md:flex items-center gap-8">
+        <a class="transition-colors text-sm font-medium hover:text-white text-neutral-300" href="#">Discover</a>
+        <a class="transition-colors text-sm font-medium hover:text-white text-neutral-300" href="#">Features</a>
+        <a class="transition-colors text-sm font-medium hover:text-white text-neutral-300" href="#">Pricing</a>
+        <a class="transition-colors text-sm font-medium hover:text-white text-neutral-300" href="#">Support</a>
+      </div>
+      <div class="hidden md:flex items-center gap-3">
+        <a href="#" class="px-3.5 py-2 rounded-lg ring-1 text-sm font-medium transition-colors bg-white/5 hover:bg-white/10 ring-white/10">Sign
+          in</a>
+
+      </div>
+      <button id="mobileOpen" class="md:hidden p-2 rounded-lg ring-1 transition-colors bg-white/5 hover:bg-white/10 ring-white/10" aria-label="Open menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="menu" class="lucide lucide-menu h-5 w-5" style="stroke-width:1.5;"><path d="M4 12h16"></path><path d="M4 18h16"></path><path d="M4 6h16"></path></svg>
+        </button>
+    </nav>
+  </header>
+</div>
+    </header>
+
+    <!-- Hero -->
+    <section class="z-10 relative">
+      <div class="sm:px-6 sm:pt-16 lg:px-8 lg:pt-40 max-w-6xl mt-0 mr-auto mb-0 ml-auto pt-16 px-4">
+  <div class="flex flex-col sm:flex-row gap-8 max-w-6xl mr-auto ml-auto pt-12 pr-6 pb-12 pl-6 items-center justify-between">
+    <!-- Left: Heading -->
+    <div class="text-left flex-1">
+      <h1 class="[animation:fadeSlideIn_1s_ease-out_0.2s_both] leading-tight sm:text-6xl md:text-7xl md:text-white text-3xl text-[#FFffff] tracking-tight">
+        50M+ Songs. 10M+ Listeners.
+      </h1>
+    </div>
+
+    <!-- Right: Subheading + Button -->
+    <div class="flex flex-col flex-1 text-left sm:text-right max-w-md space-y-6 items-start sm:items-end">
+      <p class="[animation:fadeSlideIn_1s_ease-out_0.3s_both] text-[#00000]/70 sm:text-lg sm:text-[#ffffff]/70 sm:text-right text-base font-normal text-[#FFffff]/70 max-w-sm">
+        Loopi is
+        your personal soundtrack, learning your mood, your energy, and your vibe.</p>
+      <button type="button" class="button [animation:fadeSlideIn_1s_ease-out_0.4s_both]">
+  <div class="points_wrapper">
+    <i class="point"></i>
+    <i class="point"></i>
+    <i class="point"></i>
+    <i class="point"></i>
+    <i class="point"></i>
+    <i class="point"></i>
+    <i class="point"></i>
+    <i class="point"></i>
+    <i class="point"></i>
+    <i class="point"></i>
+  </div>
+
+  <span class="inner">Download App<svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+      <path d="M5 12h14" class=""></path>
+      <path d="m12 5 7 7-7 7" class=""></path>
+    </svg></span>
+  <style class="">
+    .button {
+      cursor: pointer;
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      transition: all 0.25s ease;
+      background: radial-gradient(65.28% 65.28% at 50% 100%,
+          rgba(99, 102, 241, 0.6) 0%,
+          rgba(129, 140, 248, 0.3) 50%,
+          rgba(99, 102, 241, 0) 100%),
+        linear-gradient(135deg, #4338ca, #6366f1, #8b5cf6);
+      border-radius: 9999px;
+      border: none;
+      outline: none;
+      padding: 16px 32px;
+      min-height: 56px;
+      min-width: 160px;
+      box-shadow: 0 8px 25px -8px rgba(99, 102, 241, 0.6),
+                  0 0 0 1px rgba(255, 255, 255, 0.1);
+    }
+  
+    .button::before,
+    .button::after {
+      content: "";
+      position: absolute;
+      transition: all 0.5s ease-in-out;
+      z-index: 0;
+    }
+  
+    .button::before {
+      inset: 1px;
+      background: linear-gradient(135deg,
+          rgba(255, 255, 255, 0.2) 0%,
+          rgba(255, 255, 255, 0.05) 50%,
+          rgba(255, 255, 255, 0) 100%);
+      border-radius: 9999px;
+    }
+  
+    .button::after {
+      inset: 2px;
+      background: radial-gradient(65.28% 65.28% at 50% 100%,
+          rgba(99, 102, 241, 0.4) 0%,
+          rgba(129, 140, 248, 0.2) 50%,
+          rgba(99, 102, 241, 0) 100%),
+        linear-gradient(135deg, #4338ca, #6366f1, #8b5cf6);
+      border-radius: 9999px;
+    }
+  
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 35px -8px rgba(99, 102, 241, 0.8),
+                  0 0 0 1px rgba(255, 255, 255, 0.2);
+    }
+  
+    .button:active {
+      transform: translateY(-1px) scale(0.98);
+    }
+  
+    .points_wrapper {
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      position: absolute;
+      z-index: 1;
+    }
+  
+    .points_wrapper .point {
+      bottom: -10px;
+      position: absolute;
+      animation: floating-points infinite ease-in-out;
+      pointer-events: none;
+      width: 2px;
+      height: 2px;
+      background-color: #c7d2fe;
+      border-radius: 9999px;
+      box-shadow: 0 0 4px rgba(199, 210, 254, 0.8);
+    }
+  
+    @keyframes floating-points {
+      0% {
+        transform: translateY(0);
+        opacity: 0.8;
+      }
+  
+      50% {
+        opacity: 1;
+      }
+  
+      85% {
+        opacity: 0.3;
+      }
+  
+      100% {
+        transform: translateY(-60px);
+        opacity: 0;
+      }
+    }
+  
+    .points_wrapper .point:nth-child(1) {
+      left: 15%;
+      opacity: 0.9;
+      animation-duration: 2.8s;
+      animation-delay: 0.3s;
+    }
+  
+    .points_wrapper .point:nth-child(2) {
+      left: 25%;
+      opacity: 0.7;
+      animation-duration: 3.2s;
+      animation-delay: 0.7s;
+    }
+  
+    .points_wrapper .point:nth-child(3) {
+      left: 35%;
+      opacity: 0.8;
+      animation-duration: 2.6s;
+      animation-delay: 0.2s;
+    }
+  
+    .points_wrapper .point:nth-child(4) {
+      left: 50%;
+      opacity: 0.6;
+      animation-duration: 2.4s;
+      animation-delay: 0.1s;
+    }
+  
+    .points_wrapper .point:nth-child(5) {
+      left: 60%;
+      opacity: 0.9;
+      animation-duration: 2.1s;
+      animation-delay: 0s;
+    }
+  
+    .points_wrapper .point:nth-child(6) {
+      left: 70%;
+      opacity: 0.5;
+      animation-duration: 2.9s;
+      animation-delay: 1.2s;
+    }
+  
+    .points_wrapper .point:nth-child(7) {
+      left: 80%;
+      opacity: 0.8;
+      animation-duration: 2.7s;
+      animation-delay: 0.4s;
+    }
+  
+    .points_wrapper .point:nth-child(8) {
+      left: 45%;
+      opacity: 0.7;
+      animation-duration: 3.0s;
+      animation-delay: 0.6s;
+    }
+  
+    .points_wrapper .point:nth-child(9) {
+      left: 85%;
+      opacity: 0.6;
+      animation-duration: 2.3s;
+      animation-delay: 0.8s;
+    }
+  
+    .points_wrapper .point:nth-child(10) {
+      left: 65%;
+      opacity: 0.9;
+      animation-duration: 2.5s;
+      animation-delay: 0.5s;
+    }
+  
+    .inner {
+      z-index: 2;
+      gap: 8px;
+      position: relative;
+      width: 100%;
+      color: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.4;
+      transition: all 0.2s ease-in-out;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    }
+  
+    .inner svg.icon {
+      width: 18px;
+      height: 18px;
+      transition: transform 0.3s ease;
+      stroke: #ffffff;
+      fill: none;
+      filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+    }
+  
+    .button:hover svg.icon {
+      transform: translateX(3px);
+    }
+  
+    .button:hover svg.icon path {
+      animation: dash 0.8s linear forwards;
+    }
+  
+    @keyframes dash {
+      0% {
+        stroke-dasharray: 0, 25;
+        stroke-dashoffset: 0;
+      }
+  
+      50% {
+        stroke-dasharray: 12, 12;
+        stroke-dashoffset: -6;
+      }
+  
+      100% {
+        stroke-dasharray: 25, 0;
+        stroke-dashoffset: -12;
+      }
+    }
+  </style>
+</button>
+
+    </div>
+  </div>
+
+  <!-- App Preview -->
+  <div class="sm:mt-16 [animation:fadeSlideIn_1s_ease-out_0.5s_both] mt-16 relative px-4 sm:px-0">
+    <!-- Glow -->
+    <div class="-top-8 bg-gradient-to-r from-violet-500/30 via-fuchsia-500/20 to-indigo-500/30 h-56 max-w-5xl rounded-[28px] mr-auto ml-auto absolute top-0 right-0 bottom-0 left-0 blur-2xl">
+    </div>
+
+    <section class="supports-[backdrop-filter]:bg-white/3 overflow-hidden [animation:fadeSlideIn_1s_ease-out_0. ring-1 rounded-2xl relative backdrop-blur-2xl text-white bg-white/3 border-slate-50/5 ring-white/5 max-w-sm mx-auto sm:max-w-none scale-[0.7] sm:scale-100 origin-top" style="mask-image: linear-gradient(black 0%, black 20%, transparent 100%); backdrop-filter: blur(32px);">
+      <!-- Sidebar -->
+      <nav class="hidden sm:flex flex-col z-10 ring-1 w-64 border-r pt-0 pr-0 pb-0 pl-0 absolute top-0 bottom-0 left-0 backdrop-blur-xl ring-white/5 border-slate-50/0" style="mask-image: linear-gradient(black 0%, black 20%, transparent 100%); backdrop-filter: blur(32px);">
+        <!-- Brand -->
+        <div class="border-b pt-3 pr-4 pb-3 pl-4 border-white/5" style="backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-gradient-to-r from-violet-500/30 to-indigo-500/30 border flex items-center justify-center border-white/10" style="">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-[16px] h-[16px] text-white/80" data-icon-replaced="true" data-lucide="audio-waveform" style="color: rgb(255, 255, 255); width: 16px; height: 16px;">
+                  <path d="M2 13a2 2 0 0 0 2-2V7a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0V4a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0v-4a2 2 0 0 1 2-2">
+                  </path>
+                </svg>
+              </div>
+              <div class="">
+                <h3 class="text-sm font-semibold tracking-tight">Loopi</h3>
+                <p class="text-xs text-slate-400">Taylorly</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nav -->
+        <div class="flex-1 overflow-y-auto">
+          <div class="p-3">
+            <ul class="space-y-1 text-sm">
+              <li class="">
+                <a class="flex items-center gap-3 px-2 py-2 rounded hover:bg-white/5 text-slate-300 hover:text-white" href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 9l9-7 9 7"></path>
+                    <path d="M9 22V12h6v10"></path>
+                    <path d="M21 22V9"></path>
+                    <path d="M3 22V9"></path>
+                  </svg>
+                  Home
+                </a>
+              </li>
+              <li class="">
+                <a class="flex items-center gap-3 px-2 py-2 rounded hover:bg-white/5 text-slate-300 hover:text-white" href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 19 8 12 14 5 8 12 2"></polygon>
+                    <polyline points="5 19 12 13 19 19"></polyline>
+                  </svg>
+                  Genres
+                </a>
+              </li>
+              <li class="">
+                <a class="flex items-center gap-3 px-2 py-2 rounded hover:bg-white/5 text-slate-300 hover:text-white" href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m12 19 7-4-7-4-7 4 7 4Z"></path>
+                    <path d="M12 12V5l7-3v7"></path>
+                  </svg>
+                  Artists
+                </a>
+              </li>
+              <li class="">
+                <a class="flex items-center gap-3 px-2 py-2 rounded hover:bg-white/5 text-slate-300 hover:text-white" href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" class=""></circle>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                  Albums
+                </a>
+              </li>
+            </ul>
+
+            <div class="mt-4 pt-4 border-t border-white/5">
+              <ul class="space-y-1 text-sm">
+                <li class="">
+                  <a class="flex items-center gap-3 px-2 py-2 rounded hover:bg-white/5 text-slate-300 hover:text-white" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z">
+                      </path>
+                    </svg>
+                    Favourites
+                  </a>
+                </li>
+                <li class="">
+                  <a class="flex items-center gap-3 px-2 py-2 rounded hover:bg-white/5 text-slate-300 hover:text-white" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="" class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M13 16h-1v-4h-1"></path>
+                      <path d="M12 8h.01"></path>
+                      <circle cx="12" cy="12" r="10"></circle>
+                    </svg>
+                    Recently plays
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="mt-4 pt-4 border-t border-white/5">
+              <p class="px-2 text-xs uppercase tracking-tight mb-2 text-slate-400">Playlists</p>
+              <ul class="space-y-1 text-sm">
+                <li class=""><a class="flex items-center gap-3 px-2 py-1.5 rounded hover:bg-white/5 text-slate-300 hover:text-white" href="#"><span class="w-2 h-2 rounded-full bg-violet-400" style=""></span>Rock &amp; Roll</a></li>
+                <li class=""><a class="flex items-center gap-3 px-2 py-1.5 rounded hover:bg-white/5 text-slate-300 hover:text-white" href="#"><span class="w-2 h-2 rounded-full bg-blue-400"></span>Best of 90s</a></li>
+                <li class=""><a class="flex items-center gap-3 px-2 py-1.5 rounded hover:bg-white/5 text-slate-300 hover:text-white" href="#"><span class="w-2 h-2 rounded-full bg-green-400"></span>Work Time</a></li>
+                <li class=""><a class="flex items-center gap-3 px-2 py-1.5 rounded hover:bg-white/5 text-slate-300 hover:text-white" href="#"><span class="w-2 h-2 rounded-full bg-pink-400"></span>Exercise mode</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- User summary -->
+        <div class="border-t p-3 border-white/5" style="backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full overflow-hidden">
+              <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/d73aeb6e-b4ae-4578-8f7d-be58b83d3466_320w.jpg" alt="You" class="w-full h-full object-cover" style="">
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-sm font-medium truncate text-white">Taylor</p>
+              <p class="text-xs truncate text-slate-400">Premium</p>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="cursor-pointer text-slate-400 hover:text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="1"></circle>
+              <circle cx="19" cy="12
+              &lt;circle cx=" 5"="" r="1"></circle>
+            </svg>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main area -->
+      <div class="sm:ml-64 ml-0 flex flex-col h-full">
+        <!-- Top bar -->
+        <div class="border-b px-6 py-3 bg-white/[0.02] border-white/5" style="backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);">
+          <div class="flex items-center justify-between gap-3">
+            <div class="flex-1">
+              <div class="flex items-center gap-2 border rounded-full px-4 py-2 bg-white/5 border-white/10" style="backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8" class=""></circle>
+                  <path d="m21 21-4.35-4.35"></path>
+                </svg>
+                <span class="text-sm text-slate-300">Search tracks, albums, artists...</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full overflow-hidden">
+                <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/d73aeb6e-b4ae-4578-8f7d-be58b83d3466_320w.jpg" class="w-full h-full object-cover" alt="" style="">
+              </div>
+              <button class="text-sm flex items-center gap-1 text-slate-300 hover:text-white">
+            Taylor
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>
+          </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="flex-1 overflow-y-auto p-6 space-y-8">
+          <!-- Recently plays -->
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <h2 class="text-3xl font-semibold tracking-tight">Recently plays</h2>
+              <a href="#" class="text-xs text-slate-400 hover:text-white">See all</a>
+            </div>
+            <div class="grid grid-flow-col auto-cols-[minmax(160px,1fr)] gap-4 overflow-x-auto pb-1">
+              <!-- Card -->
+              <a href="#" class="border rounded-xl p-3 min-w-[160px] transition-colors bg-white/3 border-white/5 hover:bg-white/5" style="backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);">
+                <div class="w-full h-32 rounded-lg overflow-hidden mb-3">
+                  <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/33e11f12-cb79-4bd9-95b7-0b67c2dd11a1_320w.webp" class="w-full h-full object-cover" alt="">
+                </div>
+                <p class="text-sm font-medium">Music of the Spheres</p>
+                <p class="text-xs text-slate-400">Coldplay</p>
+              </a>
+              <a href="#" class="border rounded-xl p-3 min-w-[160px] transition-colors bg-white/3 border-white/5 hover:bg-white/5" style="backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);">
+                <div class="w-full h-32 rounded-lg overflow-hidden mb-3">
+                  <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/86ccbe4f-ff91-4be4-9f61-f25e938f9739_320w.jpg" class="w-full h-full object-cover" alt="">
+                </div>
+                <p class="text-sm font-medium">Native</p>
+                <p class="text-xs text-slate-400">OneRepublic</p>
+              </a>
+              <a href="#" class="border rounded-xl p-3 min-w-[160px] transition-colors bg-white/3 border-white/5 hover:bg-white/5" style="backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);">
+                <div class="w-full h-32 rounded-lg overflow-hidden mb-3">
+                  <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/1ac66cb8-bbbe-440a-b0ef-e4804d3737c4_320w.jpg" class="w-full h-full object-cover" alt="">
+                </div>
+                <p class="text-sm font-medium">Evolve</p>
+                <p class="text-xs text-slate-400">Imagine Dragons</p>
+              </a>
+              <a href="#" class="border rounded-xl p-3 min-w-[160px] transition-colors bg-white/3 border-white/5 hover:bg-white/5" style="backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);">
+                <div class="w-full h-32 rounded-lg overflow-hidden mb-3">
+                  <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/b5c1260f-f039-4f2b-acde-275ce2ae5004_320w.jpg" class="w-full h-full object-cover" alt="" style="">
+                </div>
+                <p class="text-sm font-medium">Starboy</p>
+                <p class="text-xs text-slate-400">The Weeknd</p>
+              </a>
+              <a href="#" class="border rounded-xl p-3 min-w-[160px] transition-colors bg-white/3 border-white/5 hover:bg-white/5" style="backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);">
+                <div class="w-full h-32 rounded-lg overflow-hidden mb-3">
+                  <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/9092603c-4178-4f8e-9d88-835e1b66e060_320w.jpg" class="w-full h-full object-cover" alt="" style="">
+                </div>
+                <p class="text-sm font-medium">Night Mode</p>
+                <p class="text-xs text-slate-400">Various</p>
+              </a>
+            </div>
+          </div>
+
+          <!-- Two columns -->
+          <div class="grid md:grid-cols-2 gap-6">
+            <!-- Trending list -->
+            <div class="border rounded-xl p-4 backdrop-blur-xl bg-white/3 border-white/5" style="backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);">
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="text-lg font-semibold tracking-tight">Trending</h3>
+                <a href="#" class="text-xs text-slate-400 hover:text-white">See all</a>
+              </div>
+              <ul class="divide-y divide-white/5">
+                <!-- Row -->
+                <li class="flex items-center gap-3 py-3">
+                  <div class="w-9 h-9 rounded overflow-hidden">
+                    <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/8efcb0c2-2c9d-4858-bb8d-d45bf95953ef_320w.jpg" class="w-full h-full object-cover" alt="" style="">
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <p class="text-sm font-medium truncate">Rodrigo</p>
+                    <p class="text-xs truncate text-slate-400">Traitor Olivia</p>
+                  </div>
+                  <span class="text-xs text-slate-400">3:49</span>
+                  <button class="ml-2 p-1 rounded text-slate-400 hover:text-white hover:bg-white/5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </button>
+                </li>
+                <li class="flex items-center gap-3 py-3">
+                  <div class="w-9 h-9 rounded overflow-hidden">
+                    <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/5b2eae1d-50c9-4fc6-bc0b-6e04ab1507b1_320w.webp" class="w-full h-full object-cover" alt="" style="">
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <p class="text-sm font-medium truncate">Heat Waves</p>
+                    <p class="text-xs truncate text-slate-400">Glass Animals</p>
+                  </div>
+                  <span class="text-xs text-slate-400">3:58</span>
+                  <button class="ml-2 p-1 rounded text-slate-400 hover:text-white hover:bg-white/5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </button>
+                </li>
+                <li class="flex items-center gap-3 py-3">
+                  <div class="w-9 h-9 rounded overflow-hidden">
+                    <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/069acc2b-9c3e-4d94-b93e-6e8cf1a4bc93_320w.jpg" class="w-full h-full object-cover" alt="">
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <p class="text-sm font-medium truncate">Kiss Me More</p>
+                    <p class="text-xs truncate text-slate-400">Doja Cat ft. SZA</p>
+                  </div>
+                  <span class="text-xs text-slate-400">3:29</span>
+                  <button class="ml-2 p-1 rounded text-slate-400 hover:text-white hover:bg-white/5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </button>
+                </li>
+                <li class="flex items-center gap-3 py-3">
+                  <div class="w-9 h-9 rounded overflow-hidden">
+                    <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/cba4b9a4-0073-4e46-93d0-939e615c93bc_320w.webp" class="w-full h-full object-cover" alt="">
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <p class="text-sm font-medium truncate">Save Your Tears</p>
+                    <p class="text-xs truncate text-slate-400">The Weeknd</p>
+                  </div>
+                  <span class="text-xs text-slate-400">3:35</span>
+                  <button class="ml-2 p-1 rounded text-slate-400 hover:text-white hover:bg-white/5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </button>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Top playlists -->
+            <div class="border rounded-xl p-4 backdrop-blur-xl bg-white/3 border-white/5" style="backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);">
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="text-lg font-semibold tracking-tight">Top playlists for you</h3>
+                <a href="#" class="text-xs text-slate-400 hover:text-white">See all</a>
+              </div>
+              <div class="grid grid-cols-2 gap-4">
+                <a href="#" class="group rounded-xl overflow-hidden border transition-colors border-white/5 bg-white/5 hover:bg-white/10">
+                  <div class="h-24">
+                    <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/a18328c6-0eba-4b87-9eae-d09601161ee3_800w.webp" class="w-full h-full object-cover" alt="">
+                  </div>
+                  <div class="p-3">
+                    <p class="text-sm font-medium">Lo‑Fi Beats</p>
+                    <p class="text-xs text-slate-400">45 songs, 2h 55min</p>
+                  </div>
+                </a>
+                <a href="#" class="group rounded-xl overflow-hidden border transition-colors border-white/5 bg-white/5 hover:bg-white/10">
+                  <div class="h-24">
+                    <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/b9d54c36-ccb9-4bbc-9c69-5e9e3aeae10c_800w.webp" class="w-full h-full object-cover" alt="">
+                  </div>
+                  <div class="p-3">
+                    <p class="text-sm font-medium">90s Rock</p>
+                    <p class="text-xs text-slate-400">45 songs, 2h 55min</p>
+                  </div>
+                </a>
+                <a href="#" class="group rounded-xl overflow-hidden border transition-colors border-white/5 bg-white/5 hover:bg-white/10">
+                  <div class="h-24">
+                    <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&amp;q=80" class="w-full h-full object-cover" alt="">
+                  </div>
+                  <div class="p-3">
+                    <p class="text-sm font-medium">Night Mode</p>
+                    <p class="text-xs text-slate-400">45 songs, 2h 55min</p>
+                  </div>
+                </a>
+                <a href="#" class="group rounded-xl overflow-hidden border transition-colors border-white/5 bg-white/5 hover:bg-white/10">
+                  <div class="h-24">
+                    <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/a1540dfd-b58d-4b71-81cc-151c7bcbed44_800w.jpg" class="w-full h-full object-cover" alt="">
+                  </div>
+                  <div class="p-3">
+                    <p class="text-sm font-medium">Synthwave</p>
+                    <p class="text-xs text-slate-400">38 songs, 2h 10min</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Player -->
+        <div class="border-t px-4 py-3 border-white/5" style="backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); background: rgba(255,255,255,0.02);">
+          <div class="flex items-center gap-4">
+            <!-- Track -->
+            <div class="flex items-center gap-3 min-w-0">
+              <div class="w-10 h-10 rounded-lg overflow-hidden">
+                <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/30d24b46-de2d-4e7a-abc0-36bd2a59109d_320w.jpg" class="w-full h-full object-cover" alt="">
+              </div>
+              <div class="min-w-0">
+                <p class="text-sm font-medium truncate">Higher Power</p>
+                <p class="text-xs truncate text-slate-400">Coldplay</p>
+              </div>
+            </div>
+
+            <!-- Controls -->
+            <div class="flex-1 flex flex-col items-center gap-2">
+              <div class="flex items-center gap-3">
+                <button class="p-1.5 rounded text-slate-300 hover:text-white hover:bg-white/5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m19 20-7-5-7 5V4l7 5 7-5v16z"></path></svg>
+            </button>
+                <button class="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round"><polygon points="5,3 19,12 5,21"></polygon></svg>
+            </button>
+                <button class="p-1.5 text-slate-300 hover:text-white hover:bg-white/5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 4 7 5 7-5v16l-7-5-7 5V4z"></path></svg>
+            </button>
+              </div>
+              <!-- Progress (custom) -->
+              <div class="w-full flex items-center gap-3">
+                <span class="text-[10px] text-slate-400">1:12</span>
+                <div class="flex-1 h-1.5 rounded-full overflow-hidden bg-white/10">
+                  <div class="h-full w-1/2 bg-gradient-to-r from-violet-500/80 to-indigo-500/80" style=""></div>
+                </div>
+                <span class="text-[10px] text-slate-400">3:28</span>
+              </div>
+            </div>
+
+            <!-- Volume (custom) -->
+            <div class="hidden md:flex items-center gap-2 w-40">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="text-slate-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="11 5 6 9H2v6h4l5 4V5z"></polygon>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+                <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+              </svg>
+              <div class="flex-1 h-1.5 rounded-full overflow-hidden bg-white/10">
+                <div class="h-full w-3/4 bg-white/40"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="z-10 pt-24 pb-24 relative space-y-6" style="">
+      <div class="[animation:fadeSlideIn_1s_ease-out_0.1s_both] animate-on-scroll max-w-6xl mr-auto ml-auto pr-6 pl-6">
+  <div class="lg:col-span-7">
+            <h2 class="leading-[1.05] sm:text-5xl lg:text-6xl lg:text-[#ffffff] text-4xl font-semibold text-[#FFffff] tracking-tight font-geist">Discover Without Limits</h2>
+            <p class="sm:text-lg sm:text-[#ffffff]/80 text-base text-[#FFffff]/70 font-geist max-w-2xl mt-4">Hi-Fi audio, smart recommendations, and millions of songs just one tap away.</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8 gap-x-6 gap-y-6">
+              
+              
+            </div>
+          </div>
+</div><div class="max-w-6xl mx-auto px-6">
+  <div class="grid grid-cols-1 lg:grid-cols-3 items-start [animation:fadeSlideIn_1s_ease-out_0.2s_both] animate-on-scroll gap-y-12 lg:gap-x-8">
+
+    <!-- Left stats -->
+    <div class="order-2 lg:order-none space-y-12">
+      <div>
+        <div class="md:text-6xl text-5xl font-semibold tracking-tight text-white">50M+</div>
+        <h3 class="text-xl md:text-2xl font-semibold tracking-tight mt-2 text-white">Songs available</h3>
+        <p class="text-base max-w-sm mt-3 text-white/70">
+          Access millions of tracks across all genres, from chart-toppers to hidden gems waiting to be discovered.
+        </p>
+      </div>
+
+      <div class="">
+        <div class="text-5xl md:text-6xl font-semibold tracking-tight text-white">Hi-Fi</div>
+        <h3 class="text-xl md:text-2xl font-semibold tracking-tight mt-2 text-white">Audio quality</h3>
+        <p class="text-base mt-3 max-w-sm text-white/70">
+          Experience crystal-clear lossless audio streaming at up to 24-bit/192kHz for the ultimate listening
+          experience.
+        </p>
+      </div>
+    </div>
+
+    <!-- Center device preview -->
+    <div class="order-1 lg:order-none">
+      <div class="w-full max-w-sm mx-auto relative">
+        <!-- Soft glow -->
+        <div class="-z-10 rounded-full absolute inset-0 blur-2xl" style="background: radial-gradient(60% 60%, rgba(139, 92, 246, 0.18) 0%, rgba(99, 102, 241, 0.14) 40%, rgba(0, 0, 0, 0) 70%);">
+        </div>
+
+        <!-- Phone chrome -->
+        <div class="border rounded-[36px] p-2 relative shadow-[0_40px_120px_-20px_rgba(0,0,0,0.8)] supports-[backdrop-filter]:bg-black/50 bg-black/60 border-white/10" style="backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);">
+
+          <!-- Screen -->
+          <div class="rounded-[28px] overflow-hidden bg-[#0b0b0d] border border-white/5">
+            <!-- Header -->
+            <div class="px-5 pt-6 pb-4" style="backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); background: rgba(3, 7, 18, 0.35);">
+              <div class="flex items-center justify-between mb-2">
+                <div class="flex items-center gap-2">
+                  <div class="w-6 h-6 rounded-full bg-gradient-to-r from-violet-500/30 to-indigo-500/30 border flex items-center justify-center border-white/10">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" class="text-white/80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M2 12h20"></path>
+                      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                      </path>
+                    </svg>
+                  </div>
+                  <p class="text-xs font-semibold tracking-tight text-white">Echo Music</p>
+                </div>
+                <div class="w-5 h-5 rounded-full overflow-hidden">
+                  <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/d73aeb6e-b4ae-4578-8f7d-be58b83d3466_320w.jpg" alt="You" class="w-full h-full object-cover">
+                </div>
+              </div>
+              <p class="text-sm text-white/70">Good evening, Taylor</p>
+              <p class="text-lg font-semibold tracking-tight text-white">Your music</p>
+            </div>
+
+            <!-- Now Playing card -->
+            <div class="px-5">
+              <div class="border rounded-2xl p-4 bg-white/5 border-white/10" style="backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);">
+                <p class="text-xs text-white/60">Now playing</p>
+                <div class="flex items-center gap-3 mt-2">
+                  <div class="w-10 h-10 rounded-lg overflow-hidden">
+                    <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/5b2eae1d-50c9-4fc6-bc0b-6e04ab1507b1_320w.webp" class="w-full h-full object-cover" alt="">
+                  </div>
+                  <div class="flex-1">
+                    <p class="text-sm font-semibold tracking-tight text-white">Heat Waves</p>
+                    <p class="text-xs text-white/70">Glass Animals</p>
+                  </div>
+                  <button class="p-1 text-white/70 hover:text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                  </button>
+                </div>
+                <div class="mt-3 flex items-center gap-2">
+                  <span class="text-[10px] text-white/50">1:12</span>
+                  <div class="flex-1 h-1 rounded-full overflow-hidden bg-white/10">
+                    <div class="h-full w-1/3 bg-gradient-to-r from-violet-500/80 to-indigo-500/80"></div>
+                  </div>
+                  <span class="text-[10px] text-white/50">3:58</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Recently Played -->
+            <div class="px-5 pt-5 pb-6">
+              <p class="text-xs mb-3 text-white/60">Recently played</p>
+              <div class="space-y-2">
+                <div class="flex items-center gap-3 rounded-xl border px-3 py-2 border-white/10 bg-white/5" style="backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+                  <div class="w-8 h-8 rounded overflow-hidden">
+                    <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/b5c1260f-f039-4f2b-acde-275ce2ae5004_320w.jpg" class="w-full h-full object-cover" alt="">
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <p class="text-xs truncate text-white">Blinding Lights</p>
+                    <p class="text-[10px] truncate text-white/50">The Weeknd</p>
+                  </div>
+                  <span class="text-[10px] text-white/50">3:22</span>
+                  <button class="p-1 text-white/50 hover:text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                  </button>
+                </div>
+
+                <div class="flex items-center gap-3 rounded-xl border px-3 py-2 border-white/10 bg-white/5" style="backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+                  <div class="w-8 h-8 rounded overflow-hidden">
+                    <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/8efcb0c2-2c9d-4858-bb8d-d45bf95953ef_320w.jpg" class="w-full h-full object-cover" alt="">
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <p class="text-xs truncate text-white">Stay</p>
+                    <p class="text-[10px] truncate text-white/50">The Kid LAROI</p>
+                  </div>
+                  <span class="text-[10px] text-white/50">2:21</span>
+                  <button class="p-1 text-white/50 hover:text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                  </button>
+                </div>
+
+                <div class="flex gap-3 border rounded-xl px-3 py-2 items-center bg-white/5 border-white/10" style="backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+                  <div class="w-8 h-8 rounded overflow-hidden">
+                    <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/069acc2b-9c3e-4d94-b93e-6e8cf1a4bc93_320w.jpg" class="w-full h-full object-cover" alt="">
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <p class="text-xs truncate text-white">Good 4 U</p>
+                    <p class="text-[10px] truncate text-white/50">Olivia Rodrigo</p>
+                  </div>
+                  <span class="text-[10px] text-white/50">2:58</span>
+                  <button class="p-1 text-white/50 hover:text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- /Recently Played -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right stats -->
+    <div class="order-3 lg:order-none space-y-12">
+      <div>
+        <div class="text-5xl md:text-6xl font-semibold tracking-tight text-white">10M+</div>
+        <h3 class="text-xl md:text-2xl font-semibold tracking-tight mt-2 text-white">Active listeners</h3>
+        <p class="text-base mt-3 max-w-sm text-white/70">
+          Join millions of music lovers who discover, share, and enjoy their favorite tracks on Loopi every day.
+        </p>
+      </div>
+
+      <div>
+        <div class="text-5xl md:text-6xl font-semibold tracking-tight text-white">Smart</div>
+        <h3 class="text-xl md:text-2xl font-semibold tracking-tight mt-2 text-white">Recommendations</h3>
+        <p class="text-base mt-3 max-w-sm text-white/70">
+          AI-powered music discovery learns your taste and suggests new songs you'll love before you even know it.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="z-10 pt-24 pb-24 relative">
+      <div class="[animation:fadeSlideIn_1s_ease-out_0.1s_both] animate-on-scroll max-w-6xl mr-auto ml-auto pr-6 pl-6 relative z-10 isolate !text-white [&amp;_h2]:!text-white [&amp;_p]:!text-white/70 [&amp;_a]:!text-white/60 hover:[&amp;_a]:!text-white [&amp;_svg]:!text-white [&amp;_svg]:!fill-current">
+
+  <div class="mb-16 xl:text-left">
+    <h2 class="text-4xl font-semibold tracking-tight mb-4 md:text-5xl text-left">
+      Loved by creators worldwide
+    </h2>
+    <p class="text-lg max-w-2xl">
+      From indie artists to Grammy winners, musicians trust Loopi for their daily listening experience.
+    </p>
+  </div>
+
+  <section class="16 sm:pt-0 sm:pb-160 max-w-none pt-0 pb-160">
+    <div class="mb-12">
+      <div class="text-center mb-12 fade-in-up animate">
+        <!-- Top meta row -->
+        <div class="mb-6"></div>
+      </div>
+    </div>
+
+    <!-- Testimonials -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 overflow-hidden fade-in-up animate rounded-none gap-x-6 gap-y-6 p-1">
+  <!-- Left Testimonial -->
+  <div class="overflow-hidden rounded-xl p-6 sm:p-6 relative backdrop-blur-xl bg-[#0b0b10]/70 supports-[backdrop-filter]:bg-[#0b0b10]/50 border border-transparent bg-clip-padding ring-1 supports-[backdrop-filter]:ring-white/20 text-black ring-black/10">
+    <div class="flex gap-2 mb-4 items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M7 7h3v10H5V9a2 2 0 0 1 2-2Zm9 0h3v10h-5V9a2 2 0 0 1 2-2Z"></path>
+      </svg>
+    </div>
+    <div class="flex items-center gap-1 mb-4">
+      <svg class="w-3 h-3" viewBox="0 0 20 20" fill="currentColor">
+        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+        </path>
+      </svg>
+      <svg class="w-3 h-3" viewBox="0 0 20 20" fill="currentColor">
+        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+        </path>
+      </svg>
+      <svg class="w-3 h-3" viewBox="0 0 20 20" fill="currentColor">
+        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+        </path>
+      </svg>
+      <svg class="w-3 h-3" viewBox="0 0 20 20" fill="currentColor">
+        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" class="">
+        </path>
+      </svg>
+      <svg class="w-3 h-3" viewBox="0 0 20 20" fill="currentColor">
+        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+        </path>
+      </svg>
+    </div>
+    <p class="text-base leading-relaxed mb-6">
+      Loopi has completely transformed how I discover music. The Hi-Fi quality is incredible, and the
+      recommendations are spot-on. My daily listening has never been better.
+    </p>
+    <div class="flex items-center justify-between">
+      <div class="">
+        <div class="xl:text-[#ffffff] text-sm font-medium text-[#FFffff]">Sarah Chen</div>
+        <div class="xl:text-[#ffffff]/70 text-xs text-[#FFffff]/70 mt-1">Music Producer</div>
+      </div>
+      <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/8a90d32f-809f-4383-b71f-6a9c50621b69_320w.jpg" alt="Sarah Chen" class="w-8 h-8 object-cover rounded-full">
+    </div>
+  </div>
+
+  <!-- Center Highlight Testimonial -->
+  <div class="overflow-hidden rounded-xl p-6 sm:p-6 relative backdrop-blur-xl bg-[#0b0b10]/80 supports-[backdrop-filter]:bg-[#0b0b10]/60 border border-transparent bg-clip-padding ring-1 supports-[backdrop-filter]:ring-white/25 text-black ring-black/15">
+    <div class="flex gap-2 mb-4 items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M7 7h3v10H5V9a2 2 0 0 1 2-2Zm9 0h3v10h-5V9a2 2 0 0 1 2-2Z"></path>
+      </svg>
+    </div>
+    <div class="flex items-center gap-1 mb-4">
+      <svg class="w-3 h-3" viewBox="0 0 20 20" fill="currentColor">
+        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+        </path>
+      </svg>
+      <svg class="w-3 h-3" viewBox="0 0 20 20" fill="currentColor">
+        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+        </path>
+      </svg>
+      <svg class="w-3 h-3" viewBox="0 0 20 20" fill="currentColor">
+        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+        </path>
+      </svg>
+      <svg class="w-3 h-3" viewBox="0 0 20 20" fill="currentColor">
+        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+        </path>
+      </svg>
+      <svg class="w-3 h-3" viewBox="0 0 20 20" fill="currentColor">
+        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+        </path>
+      </svg>
+    </div>
+    <p class="leading-relaxed text-base mb-6">
+      Loopi has completely transformed how I discover music. The Hi-Fi quality is incredible, and the
+      recommendations are spot-on. My daily listening has never been better.
+    </p>
+    <div class="flex items-center justify-between">
+      <div class="">
+        <div class="xl:text-[#ffffff] text-sm font-medium text-[#FFffff]">Sarah Chen</div>
+        <div class="xl:text-[#ffffff]/70 text-xs text-[#FFffff]/70 mt-1">Music Producer</div>
+      </div>
+      <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/8a90d32f-809f-4383-b71f-6a9c50621b69_320w.jpg" alt="Sarah Chen" class="w-8 h-8 object-cover rounded-full">
+    </div>
+  </div>
+
+  <!-- Right Testimonial -->
+  <div class="overflow-hidden sm:p-6 supports-[backdrop-filter]:bg-[#0b0b10]/50 bg-clip-padding supports-[backdrop-filter]:ring-white/20 text-black bg-[#0b0b10]/70 border-transparent border ring-black/10 ring-1 rounded-xl pt-6 pr-6 pb-6 pl-6 relative backdrop-blur-xl">
+
+  <!-- Icon -->
+  <div class="flex items-center gap-2 mb-4">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M7 7h3v10H5V9a2 2 0 0 1 2-2Zm9 0h3v10h-5V9a2 2 0 0 1 2-2Z"></path>
+    </svg>
+  </div>
+
+  <!-- Stars -->
+  <div class="flex items-center gap-1 mb-4 text-yellow-400">
+    <svg class="w-3 h-3" viewBox="0 0 20 20" fill="currentColor">
+      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+      </path>
+    </svg>
+    <svg class="w-3 h-3" viewBox="0 0 20 20" fill="currentColor">
+      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+      </path>
+    </svg>
+    <svg class="w-3 h-3" viewBox="0 0 20 20" fill="currentColor">
+      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+      </path>
+    </svg>
+    <svg class="w-3 h-3" viewBox="0 0 20 20" fill="currentColor">
+      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+      </path>
+    </svg>
+    <svg class="w-3 h-3" viewBox="0 0 20 20" fill="currentColor">
+      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z">
+      </path>
+    </svg>
+  </div>
+
+  <!-- Text -->
+  <p class="leading-relaxed text-base mb-6 text-white/90">
+    I've tried every music app out there, but Loopi's interface and sound quality are unmatched.
+    The offline downloads feature is perfect for my travels.
+  </p>
+
+  <!-- Name + Avatar -->
+  <div class="flex items-end justify-between">
+    <div class="flex flex-col">
+      <div class="xl:text-[#ffffff] text-sm font-medium text-[#FFffff]">Taylor Swift</div>
+      <div class="xl:text-[#ffffff]/70 text-xs text-[#FFffff]/70 mt-1">Recording Artist</div>
+    </div>
+    <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/99667665-1a71-4064-bf58-4743bb9e0ebc_320w.webp" alt="Taylor Swift" class="w-8 h-8 object-cover rounded-full">
+  </div>
+</div>
+</div>
+
+    <!-- Metrics Row -->
+    <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-6">
+      <div class="rounded-xl p-6 backdrop-blur-xl bg-[#0b0b10]/70 supports-[backdrop-filter]:bg-[#0b0b10]/50 border border-transparent bg-clip-padding ring-1 supports-[backdrop-filter]:ring-white/20 ring-white/10">
+        <div class="text-3xl sm:text-4xl font-semibold tracking-tight mb-2">50M+</div>
+        <div class="text-xs text-white/70">Songs available across all genres</div>
+      </div>
+      <div class="rounded-xl p-6 backdrop-blur-xl bg-[#0b0b10]/70 supports-[backdrop-filter]:bg-[#0b0b10]/50 border border-transparent bg-clip-padding ring-1 supports-[backdrop-filter]:ring-white/20 ring-white/10">
+        <div class="text-3xl sm:text-4xl font-semibold tracking-tight mb-2">10M+</div>
+        <div class="text-xs text-white/70">Active listeners worldwide</div>
+      </div>
+      <div class="rounded-xl p-6 backdrop-blur-xl bg-[#0b0b10]/70 supports-[backdrop-filter]:bg-[#0b0b10]/50 border border-transparent bg-clip-padding ring-1 supports-[backdrop-filter]:ring-white/20 ring-white/10">
+        <div class="text-3xl sm:text-4xl font-semibold tracking-tight mb-2">Hi-Fi</div>
+        <div class="text-xs text-white/70">Lossless audio quality streaming</div>
+      </div>
+    </div>
+  </section>
+</div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="z-10 relative py-24">
+  <div class="[animation:fadeSlideIn_1s_ease-out_0.1s_both] animate-on-scroll max-w-6xl mr-auto ml-auto pr-6 pl-6 relative z-10 isolate !text-white [&amp;_h2]:!text-white [&amp;_h3]:!text-white [&amp;_p]:!text-white/70 [&amp;_a]:!text-white/60 hover:[&amp;_a]:!text-white [&amp;_li&gt;span]:!text-white/80 [&amp;_small]:!text-white/60 [&amp;_svg]:!stroke-current [&amp;_svg]:!text-white">
+
+  <div class="mb-16">
+    <h2 class="text-4xl font-semibold tracking-tight mb-4 md:text-5xl text-left">
+      Choose your plan
+    </h2>
+    <p class="text-left text-lg max-w-2xl">
+      Start free and upgrade when you're ready for more features and higher quality audio.
+    </p>
+  </div>
+
+  <section class="z-10 animate-scaleIn animation-delay-500 sm:px-0 sm:pt-0 sm:pb-0 w-full max-w-none border-0 rounded-none mt-24 mr-auto ml-auto pt-0 pr-6 pb-0 pl-6 shadow-2xl">
+    <!-- Pricing Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 mt-8 gap-x-6 gap-y-6">
+  <!-- Free Plan (Glass card) -->
+  <div class="lg:col-span-6 animate-fadeInLeft animation-delay-200">
+    <div class="rounded-[28px] p-6 sm:p-8 backdrop-blur-xl shadow-2xl bg-[#0b0b10]/70 supports-[backdrop-filter]:bg-[#0b0b10]/50 border border-transparent bg-clip-padding ring-1 supports-[backdrop-filter]:ring-white/20 ring-white/10">
+  <h3 class="text-3xl sm:text-4xl font-semibold tracking-tight">Free</h3>
+  <p class="mt-2">Perfect for casual listeners discovering new music and building playlists.</p>
+
+  <div class="mt-6 mb-6">
+    <div class="flex items-baseline gap-1">
+      <span class="text-4xl font-semibold tracking-tight">$0</span>
+      <span class="text-white/60">/month</span>
+    </div>
+    <p class="text-sm mt-1 text-white/50">Forever free</p>
+  </div>
+
+  <ul class="mt-6 space-y-4">
+    <li class="flex items-start gap-3">
+      <span class="inline-flex items-center justify-center w-5 h-5 rounded-full flex-shrink-0 bg-white/20 text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+              </span>
+      <span>50M+ songs with ads</span>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="inline-flex items-center justify-center w-5 h-5 rounded-full flex-shrink-0 bg-white/20 text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+              </span>
+      <span>Shuffle play only</span>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="inline-flex items-center justify-center w-5 h-5 rounded-full flex-shrink-0 bg-white/20 text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+              </span>
+      <span>6 skips per hour</span>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="inline-flex items-center justify-center w-5 h-5 rounded-full flex-shrink-0 bg-white/20 text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+              </span>
+      <span>Basic audio quality</span>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="inline-flex items-center justify-center w-5 h-5 rounded-full flex-shrink-0 bg-white/20 text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+              </span>
+      <span>Create playlists</span>
+    </li>
+  </ul>
+
+  <div class="mt-8">
+    <button type="button" class="button w-full">
+              <div class="points_wrapper">
+                <i class="point"></i><i class="point"></i><i class="point"></i><i class="point"></i><i class="point"></i>
+                <i class="point"></i><i class="point"></i><i class="point"></i><i class="point"></i><i class="point"></i>
+              </div>
+              <span class="inner">
+                Get Started
+                <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>
+              </span>
+            </button>
+  </div>
+</div>
+  </div>
+
+  <!-- Premium Plan (Featured glass card) -->
+  <div class="lg:col-span-6 animate-fadeInRight animation-delay-300">
+    <div class="rounded-[28px] p-6 sm:p-8 relative shadow-2xl backdrop-blur-xl bg-[#0b0b10]/80 supports-[backdrop-filter]:bg-[#0b0b10]/60 border border-transparent bg-clip-padding ring-1 supports-[backdrop-filter]:ring-white/25 ring-white/15">
+  <!-- Popular badge (optional) -->
+  <div class="absolute -top-3 left-1/2 -translate-x-1/2"></div>
+
+  <h3 class="text-3xl sm:text-4xl font-semibold tracking-tight">Premium</h3>
+  <p class="mt-2">Ad-free listening with unlimited skips and Hi-Fi audio quality.</p>
+
+  <div class="mt-6 mb-6">
+    <div class="flex items-baseline gap-1">
+      <span class="text-4xl font-semibold tracking-tight">$9.99</span>
+      <span class="text-white/60">/month</span>
+    </div>
+    <p class="text-sm mt-1 text-white/50">Cancel anytime</p>
+  </div>
+
+  <ul class="mt-6 space-y-4">
+    <li class="flex items-start gap-3">
+      <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-gradient-to-r from-violet-500 to-indigo-500 flex-shrink-0 text-white" style="">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+              </span>
+      <span>Ad-free music streaming</span>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-gradient-to-r from-violet-500 to-indigo-500 flex-shrink-0 text-white" style="">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+              </span>
+      <span>Unlimited skips</span>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-gradient-to-r from-violet-500 to-indigo-500 flex-shrink-0 text-white" style="">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+              </span>
+      <span class="">Hi-Fi audio quality</span>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-gradient-to-r from-violet-500 to-indigo-500 flex-shrink-0 text-white" style="">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+              </span>
+      <span>Offline downloads</span>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-gradient-to-r from-violet-500 to-indigo-500 flex-shrink-0 text-white" style="">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+              </span>
+      <span>Smart recommendations</span>
+    </li>
+    <li class="flex items-start gap-3">
+      <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-gradient-to-r from-violet-500 to-indigo-500 flex-shrink-0 text-white" style="">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+              </span>
+      <span>30-day free trial</span>
+    </li>
+  </ul>
+
+  <div class="mt-8">
+    <button type="button" class="button w-full">
+              <div class="points_wrapper">
+                <i class="point"></i><i class="point"></i><i class="point"></i><i class="point"></i><i class="point"></i>
+                <i class="point"></i><i class="point"></i><i class="point"></i><i class="point"></i><i class="point"></i>
+              </div>
+              <span class="inner">
+                Start Free Trial
+                <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>
+              </span>
+            </button>
+  </div>
+</div>
+  </div>
+
+  <style>
+    .button {
+      cursor: pointer;
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      transition: all 0.25s ease;
+      background: radial-gradient(65.28% 65.28% at 50% 100%,
+          rgba(99, 102, 241, 0.6) 0%,
+          rgba(129, 140, 248, 0.3) 50%,
+          rgba(99, 102, 241, 0) 100%),
+        linear-gradient(135deg, #4338ca, #6366f1, #8b5cf6);
+      border-radius: 9999px;
+      border: none;
+      outline: none;
+      padding: 16px 32px;
+      min-height: 56px;
+      min-width: 160px;
+      box-shadow: 0 8px 25px -8px rgba(99, 102, 241, 0.6),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+    }
+
+    .button::before,
+    .button::after {
+      content: "";
+      position: absolute;
+      transition: all 0.5s ease-in-out;
+      z-index: 0;
+    }
+
+    .button::before {
+      inset: 1px;
+      background: linear-gradient(135deg,
+          rgba(255, 255, 255, 0.2) 0%,
+          rgba(255, 255, 255, 0.05) 50%,
+          rgba(255, 255, 255, 0) 100%);
+      border-radius: 9999px;
+    }
+
+    .button::after {
+      inset: 2px;
+      background: radial-gradient(65.28% 65.28% at 50% 100%,
+          rgba(99, 102, 241, 0.4) 0%,
+          rgba(129, 140, 248, 0.2) 50%,
+          rgba(99, 102, 241, 0) 100%),
+        linear-gradient(135deg, #4338ca, #6366f1, #8b5cf6);
+      border-radius: 9999px;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 35px -8px rgba(99, 102, 241, 0.8),
+        0 0 0 1px rgba(255, 255, 255, 0.2);
+    }
+
+    .button:active {
+      transform: translateY(-1px) scale(0.98);
+    }
+
+    .points_wrapper {
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      position: absolute;
+      z-index: 1;
+    }
+
+    .points_wrapper .point {
+      bottom: -10px;
+      position: absolute;
+      animation: floating-points infinite ease-in-out;
+      pointer-events: none;
+      width: 2px;
+      height: 2px;
+      background-color: #c7d2fe;
+      border-radius: 9999px;
+      box-shadow: 0 0 4px rgba(199, 210, 254, 0.8);
+    }
+
+    @keyframes floating-points {
+      0% {
+        transform: translateY(0);
+        opacity: 0.8;
+      }
+
+      50% {
+        opacity: 1;
+      }
+
+      85% {
+        opacity: 0.3;
+      }
+
+      100% {
+        transform: translateY(-60px);
+        opacity: 0;
+      }
+    }
+
+    .points_wrapper .point:nth-child(1) {
+      left: 15%;
+      opacity: .9;
+      animation-duration: 2.8s;
+      animation-delay: .3s
+    }
+
+    .points_wrapper .point:nth-child(2) {
+      left: 25%;
+      opacity: .7;
+      animation-duration: 3.2s;
+      animation-delay: .7s
+    }
+
+    .points_wrapper .point:nth-child(3) {
+      left: 35%;
+      opacity: .8;
+      animation-duration: 2.6s;
+      animation-delay: .2s
+    }
+
+    .points_wrapper .point:nth-child(4) {
+      left: 50%;
+      opacity: .6;
+      animation-duration: 2.4s;
+      animation-delay: .1s
+    }
+
+    .points_wrapper .point:nth-child(5) {
+      left: 60%;
+      opacity: .9;
+      animation-duration: 2.1s;
+      animation-delay: 0s
+    }
+
+    .points_wrapper .point:nth-child(6) {
+      left: 70%;
+      opacity: .5;
+      animation-duration: 2.9s;
+      animation-delay: 1.2s
+    }
+
+    .points_wrapper .point:nth-child(7) {
+      left: 80%;
+      opacity: .8;
+      animation-duration: 2.7s;
+      animation-delay: .4s
+    }
+
+    .points_wrapper .point:nth-child(8) {
+      left: 45%;
+      opacity: .7;
+      animation-duration: 3s;
+      animation-delay: .6s
+    }
+
+    .points_wrapper .point:nth-child(9) {
+      left: 85%;
+      opacity: .6;
+      animation-duration: 2.3s;
+      animation-delay: .8s
+    }
+
+    .points_wrapper .point:nth-child(10) {
+      left: 65%;
+      opacity: .9;
+      animation-duration: 2.5s;
+      animation-delay: .5s
+    }
+
+    .inner {
+      z-index: 2;
+      gap: 8px;
+      position: relative;
+      width: 100%;
+      color: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.4;
+      transition: all .2s ease-in-out;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+    }
+
+    .inner svg.icon {
+      width: 18px;
+      height: 18px;
+      transition: transform .3s ease;
+      stroke: #ffffff;
+      fill: none;
+      filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .2));
+    }
+
+    .button:hover svg.icon {
+      transform: translateX(3px);
+    }
+
+    .button:hover svg.icon path {
+      animation: dash .8s linear forwards;
+    }
+
+    @keyframes dash {
+      0% {
+        stroke-dasharray: 0, 25;
+        stroke-dashoffset: 0;
+      }
+
+      50% {
+        stroke-dasharray: 12, 12;
+        stroke-dashoffset: -6;
+      }
+
+      100% {
+        stroke-dasharray: 25, 0;
+        stroke-dashoffset: -12;
+      }
+    }
+  </style>
+</div>
+  </section>
+
+  <div class="text-center mt-8"></div>
+</div>
+</section>
+
+    <!-- Footer -->
+    <footer class="z-10 [animation:fadeSlideIn_1s_ease-out_0.1s_both] animate-on-scroll border-t relative backdrop-blur-xl border-white/10" style="backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); background: rgba(3, 4, 5, 0.8);">
+      <footer class="relative z-10 isolate bg-[#0b0b10] supports-[backdrop-filter]:bg-[#0b0b10]/80 supports-[backdrop-filter]:backdrop-blur-2xl ring-1 supports-[backdrop-filter]:ring-white/20 border border-transparent bg-clip-padding [&amp;_h3]:!text-white [&amp;_p]:!text-white/70 [&amp;_a]:!text-white/60 hover:[&amp;_a]:!text-white [&amp;_li&gt;a]:!text-white/70 hover:[&amp;_li&gt;a]:!text-white [&amp;_svg]:!fill-current ring-white/10 text-white">
+
+  <div class="max-w-6xl mx-auto px-6 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+      <!-- Brand -->
+      <div class="lg:col-span-2">
+        <div class="flex items-center gap-3 mb-4">
+          <a href="#" class="inline-flex items-center justify-center bg-center w-[90px] h-[36px] bg-[url(https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/b935a094-dbd3-4857-a41b-50e73466a4ab_1600w.png)] bg-cover rounded-none"></a>
+        </div>
+        <p class="mb-6 max-w-sm text-white/70">
+          Discover, stream, and share music like never before. Join millions of listeners on their musical journey.
+        </p>
+        <div class="flex items-center gap-4">
+          <a href="#" class="transition-colors text-white/60 hover:text-white">
+            <!-- svg ... -->
+          </a>
+          <a href="#" class="transition-colors text-white/60 hover:text-white">
+            <!-- svg ... -->
+          </a>
+          <a href="#" class="transition-colors text-white/60 hover:text-white">
+            <!-- svg ... -->
+          </a>
+          <a href="#" class="transition-colors text-white/60 hover:text-white">
+            <!-- svg ... -->
+          </a>
+        </div>
+      </div>
+
+      <!-- Product -->
+      <div>
+        <h3 class="font-semibold mb-4">Product</h3>
+        <ul class="space-y-3">
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Download</a></li>
+          <li><a href="#">Web Player</a></li>
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div>
+        <h3 class="font-semibold mb-4">Company</h3>
+        <ul class="space-y-3">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">News</a></li>
+        </ul>
+      </div>
+
+      <!-- Support -->
+      <div>
+        <h3 class="font-semibold mb-4">Support</h3>
+        <ul class="space-y-3">
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 border-white/10">
+      <p class="text-sm text-white/60">
+        © 2024 Loopi. All rights reserved.
+      </p>
+      <div class="flex items-center gap-6 text-sm">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+    </footer>
+  
+</body></html>
