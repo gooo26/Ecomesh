@@ -1,0 +1,19 @@
+Loopi Music Streaming Landing Page Template
+
+
+A reusable landing page template for music streaming services featuring hi-fi audio, smart 
+recommendations, user playlists, and subscription plans.
+
+
+Tags:
+
+Landing Page
+Music Streaming
+Features
+Pricing
+Testimonials
+User Profiles
+Playlists
+Hi-Fi Audio
+Mobile App
+Subscription
